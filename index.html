@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valerie Bagala | Strategic Sourcing &amp; Procurement Leader</title>
+<meta name="description" content="Valerie Bagala — Strategic Sourcing & Procurement Leader. 20+ years across MedTech, Pharma, Skincare, and Energy. Resume and portfolio of sourcing systems concept builds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0D1B2A;
+    --navy-2:#132538;
+    --gold:#B89A5A;
+    --gold-light:#D8C08A;
+    --cream:#F5F0E8;
+    --cream-2:#FDFAF5;
+    --text-dark:#0D1B2A;
+    --text-muted:#5B6572;
+    --text-on-navy:#FDFAF5;
+    --text-on-navy-muted:#AEB8C4;
+    --border-navy:rgba(253,250,245,0.10);
+    --border-cream:rgba(13,27,42,0.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Montserrat',"Helvetica Neue",Arial,sans-serif;
+    background:var(--cream);
+    color:var(--text-dark);
+    line-height:1.6;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 32px;}
+  .eyebrow{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+  h1,h2,h3{font-weight:800;letter-spacing:-0.5px;}
+
+  /* Header */
+  header{
+    background:var(--cream-2);
+    border-bottom:1px solid var(--border-cream);
+    position:sticky;top:0;z-index:50;
+  }
+  header .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:20px;padding-bottom:20px;
+  }
+  .logo{font-size:20px;font-weight:800;letter-spacing:0.5px;color:var(--navy);}
+  .logo span{color:var(--gold);}
+  nav{display:flex;gap:36px;}
+  nav a{
+    font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--navy);opacity:0.75;transition:opacity .15s;
+  }
+  nav a:hover{opacity:1;}
+
+  /* Hero */
+  .hero{
+    background:var(--navy);
+    color:var(--text-on-navy);
+    padding:100px 0 80px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 85% 20%, rgba(184,154,90,0.12), transparent 55%);
+    pointer-events:none;
+  }
+  .hero .wrap{position:relative;}
+  .hero h1{
+    font-size:52px;line-height:1.08;margin:18px 0 22px;color:var(--text-on-navy);
+    max-width:780px;
+  }
+  .hero h1 .accent{color:var(--gold);}
+  .hero p.lead{
+    max-width:640px;font-size:17px;color:var(--text-on-navy-muted);margin-bottom:34px;
+  }
+  .contact-line{
+    display:flex;flex-wrap:wrap;gap:22px;font-size:13px;color:var(--text-on-navy-muted);margin-bottom:36px;
+  }
+  .contact-line a:hover{color:var(--gold-light);}
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:15px 26px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+    border-radius:2px;transition:all .15s;
+  }
+  .btn-gold{background:var(--gold);color:var(--navy);}
+  .btn-gold:hover{background:var(--gold-light);}
+  .btn-outline{border:1px solid rgba(253,250,245,0.35);color:var(--text-on-navy);}
+  .btn-outline:hover{border-color:var(--gold);color:var(--gold-light);}
+
+  /* Section generic */
+  section{padding:80px 0;}
+  .section-label{text-align:left;margin-bottom:44px;}
+  .section-label h2{font-size:32px;color:var(--navy);margin-top:10px;}
+  .section-label.on-navy h2{color:var(--text-on-navy);}
+
+  /* Core competencies */
+  .comp-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:var(--border-cream);
+    border:1px solid var(--border-cream);
+  }
+  .comp-item{background:var(--cream-2);padding:26px 24px;font-size:13.5px;color:var(--text-dark);}
+  .comp-item::before{content:"";display:block;width:22px;height:3px;background:var(--gold);margin-bottom:14px;}
+
+  /* Experience */
+  .job{
+    padding:32px 0;border-bottom:1px solid var(--border-cream);
+    display:grid;grid-template-columns:230px 1fr;gap:32px;
+  }
+  .job:last-child{border-bottom:none;}
+  .job-meta{color:var(--text-muted);}
+  .job-meta .company{font-weight:700;color:var(--navy);font-size:15px;display:block;margin-bottom:4px;}
+  .job-meta .dates{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);font-weight:700;}
+  .job-meta .loc{font-size:12.5px;margin-top:4px;}
+  .job-body .title{font-weight:700;font-size:15.5px;margin-bottom:12px;color:var(--navy);}
+  .job-body ul{padding-left:18px;}
+  .job-body li{font-size:14px;margin-bottom:9px;color:#333;}
+  .job-body li strong{color:var(--navy);}
+
+  /* Portfolio (navy section) */
+  .portfolio-section{background:var(--navy);color:var(--text-on-navy);}
+  .note-box{
+    border:1px solid rgba(184,154,90,0.4);background:rgba(184,154,90,0.08);
+    padding:16px 20px;border-radius:2px;font-size:12.5px;color:var(--gold-light);
+    margin-bottom:44px;line-height:1.6;
+  }
+  .port-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  .port-card{
+    background:var(--navy-2);border:1px solid var(--border-navy);
+    padding:28px;display:flex;flex-direction:column;gap:14px;
+    transition:transform .15s, border-color .15s;
+  }
+  .port-card:hover{transform:translateY(-3px);border-color:var(--gold);}
+  .port-icon{
+    width:38px;height:38px;border-radius:6px;background:rgba(184,154,90,0.15);
+    display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:17px;font-weight:800;
+  }
+  .port-card h3{font-size:17px;color:var(--text-on-navy);font-weight:700;letter-spacing:0;}
+  .port-tag{
+    display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+    color:var(--gold);border:1px solid rgba(184,154,90,0.4);padding:3px 9px;border-radius:20px;width:fit-content;
+  }
+  .port-card p{font-size:13.5px;color:var(--text-on-navy-muted);flex-grow:1;}
+  .port-link{
+    font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);
+    display:inline-flex;align-items:center;gap:6px;margin-top:4px;
+  }
+  .port-link:hover{color:var(--gold-light);}
+  .port-card.wide{grid-column:span 2;}
+
+  /* Education / systems */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  .list-block h3{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+  .edu-item{margin-bottom:16px;}
+  .edu-item .deg{font-weight:700;color:var(--navy);font-size:14.5px;}
+  .edu-item .school{font-size:13px;color:var(--text-muted);}
+  .pill-wrap{display:flex;flex-wrap:wrap;gap:8px;}
+  .pill{
+    font-size:12px;padding:7px 13px;background:var(--cream-2);border:1px solid var(--border-cream);
+    border-radius:20px;color:var(--navy);
+  }
+  .achieve-item{font-size:13.5px;margin-bottom:10px;color:#333;}
+  .achieve-item strong{color:var(--navy);}
+
+  /* Footer */
+  footer{background:var(--navy);color:var(--text-on-navy-muted);padding:44px 0;text-align:center;font-size:12.5px;border-top:1px solid var(--border-navy);}
+  footer .footer-name{color:var(--text-on-navy);font-weight:700;margin-bottom:8px;font-size:14px;}
+  footer a:hover{color:var(--gold-light);}
+
+  @media(max-width:760px){
+    .hero h1{font-size:34px;}
+    .comp-grid{grid-template-columns:1fr;}
+    .job{grid-template-columns:1fr;}
+    .port-grid{grid-template-columns:1fr;}
+    .port-card.wide{grid-column:span 1;}
+    .two-col{grid-template-columns:1fr;gap:36px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">VALERIE <span>BAGALA</span></div>
+    <nav>
+      <a href="#resume">Experience</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Strategic Sourcing &middot; Procurement &amp; Supply Chain</div>
+    <h1>Valerie Bagala<br><span class="accent">Strategic Sourcing &amp; Procurement Leader</span></h1>
+    <p class="lead">20+ years of experience across MedTech, Pharma, Healthcare, Skincare, and Energy — combining category management and supplier relationship management with hands-on, engineering-embedded technical sourcing and full-cycle contract negotiation.</p>
+    <div class="contact-line">
+      <a href="mailto:VRBagala@gmail.com">VRBagala@gmail.com</a>
+      <span>415-740-5874</span>
+      <span>Mountain House, CA</span>
+    </div>
+    <div class="btn-row">
+      <a href="#portfolio" class="btn btn-gold">View Portfolio</a>
+      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    </div>
+  </div>
+</section>
+
+<section id="resume">
+  <div class="wrap">
+    <div class="section-label">
+      <div class="eyebrow">Core Competencies</div>
+      <h2>Where I Add Value</h2>
+    </div>
+    <div class="comp-grid">
+      <div class="comp-item">Strategic Sourcing &amp; Category Management</div>
+      <div class="comp-item">Supplier Relationship Management (SRM)</div>
+      <div class="comp-item">R&amp;D / NPD Technical Component Sourcing</div>
+      <div class="comp-item">Indirect Procurement &amp; SaaS Sourcing</div>
+      <div class="comp-item">Technical Contract Negotiation</div>
+      <div class="comp-item">Should-Cost Modeling &amp; Market Intelligence</div>
+      <div class="comp-item">Supplier Qualification &amp; Audit</div>
+      <div class="comp-item">AI-Enabled Process Automation</div>
+      <div class="comp-item">Regulated Industry Compliance</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">
+      <div class="eyebrow">Professional Experience</div>
+      <h2>Where I've Worked</h2>
+    </div>
+
+    <div class="job">
+      <div class="job-meta">
+        <span class="company">Carl Zeiss Meditec</span>
+        <span class="dates">2022 &ndash; Present</span>
+        <div class="loc">Dublin, CA</div>
+      </div>
+      <div class="job-body">
+        <div class="title">Strategic Sourcing Partner &mdash; Engineering &amp; Strategic Projects</div>
+        <ul>
+          <li><strong>Technical Component &amp; Tier 1/Tier 2 Sourcing:</strong> Manage business relationships with PCBA and optics contract manufacturers and component suppliers, overseeing supplier performance and industrialization through NPI and mass production builds.</li>
+          <li><strong>Engineering Collaboration:</strong> Operate as an embedded commercial partner inside development engineering settings, closing scope and commercial gaps in technical SOWs before they become business exposure.</li>
+          <li><strong>Contracts &amp; Negotiations:</strong> Lead end-to-end negotiation, drafting, and joint Legal-Procurement review of SOWs and MSAs, including NDAs and supply agreements.</li>
+          <li><strong>Digital Leadership:</strong> Drove full procurement process adoption of the Jaggaer platform and architected a Microsoft Power App that converted a 100-page manual process into a standardized global workflow.</li>
+          <li><strong>Audit &amp; Regulatory Compliance:</strong> Serve as lead expert during corporate and regulatory audits in a regulated medical device environment.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-meta">
+        <span class="company">Rodan &amp; Fields</span>
+        <span class="dates">2018 &ndash; 2021</span>
+        <div class="loc">San Ramon, CA</div>
+      </div>
+      <div class="job-body">
+        <div class="title">Strategic Sourcing Manager, Raw Materials</div>
+        <ul>
+          <li><strong>Full-Cycle Management:</strong> Directed SRM and supplier qualification from strategy through execution, leading cross-functional teams across R&amp;D, Regulatory, and Product Development.</li>
+          <li><strong>Category Roadmapping:</strong> Authored and executed category sourcing roadmaps for all direct material purchases, aligning supply chain objectives with multi-year growth targets.</li>
+          <li><strong>Systems &amp; Reporting:</strong> Built raw material tracking and reporting tools integrating SAP, COPTIS, RFP, and sourcing systems for spend analysis, forecasting, and risk management.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-meta">
+        <span class="company">Shell Oil Products</span>
+        <span class="dates">2013 &ndash; 2018</span>
+        <div class="loc">Martinez, CA</div>
+      </div>
+      <div class="job-body">
+        <div class="title">Contract Manager</div>
+        <ul>
+          <li><strong>Portfolio Leadership:</strong> Managed a contract portfolio valued up to $450M, delivering $20M in annual savings through strategic sourcing and performance-based negotiations.</li>
+          <li><strong>Sourcing &amp; Negotiation:</strong> Identified and evaluated suppliers, market trends, and risk factors; negotiated contract terms through RFI, RFP, RFQ, and direct negotiations using should-cost models and market intelligence.</li>
+          <li><strong>Global Coordination:</strong> Served as Regional Focal Point for global ERP systems, coordinating local, regional, and global leadership to ensure operational consistency.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-meta">
+        <span class="company">Sutter East Bay Hospitals</span>
+        <span class="dates">2007 &ndash; 2013</span>
+        <div class="loc">Oakland, CA</div>
+      </div>
+      <div class="job-body">
+        <div class="title">Pharmaceutical Procurement / Regional Supply Buyer</div>
+        <ul>
+          <li><strong>Regulatory Compliance:</strong> Ensured clinical staff maintained valid pharmaceutical DEA and CA licensing, and that procured materials met ADA, FDA, and OSHA requirements.</li>
+          <li><strong>Cost Optimization:</strong> Procured 11,000+ line items monthly; used strategic sourcing and lead-time management to deliver sustained cost reductions.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" class="portfolio-section">
+  <div class="wrap">
+    <div class="section-label on-navy">
+      <div class="eyebrow">Portfolio</div>
+      <h2>Sourcing Systems I've Designed &amp; Built</h2>
+    </div>
+    <div class="note-box">
+      These are concept builds I designed to demonstrate how I think about sourcing systems &mdash; supplier data architecture, RFQ workflows, tariff exposure, and risk monitoring. They run on illustrative datasets for demonstration purposes, not live production data.
+    </div>
+    <div class="port-grid">
+
+      <div class="port-card wide">
+        <div class="port-icon">RFQ</div>
+        <span class="port-tag">Supplier Data &amp; RFQ</span>
+        <h3>Sourcing Backend &amp; RFQ Console</h3>
+        <p>A supplier / material / assembly database concept built as the backend data source for RFQ creation &mdash; searchable supplier directory, material &amp; assembly catalog, and an RFQ/RFI builder, covering hundreds of suppliers across categories and geographies.</p>
+        <a class="port-link" href="https://www.send.co/a/IUjAkZV7" target="_blank" rel="noopener noreferrer">View Live Demo &rarr;</a>
+      </div>
+
+      <div class="port-card">
+        <div class="port-icon">%</div>
+        <span class="port-tag">Tariff &amp; Trade</span>
+        <h3>US Tariff Rate Tracker</h3>
+        <p>Tracks statutory U.S. import tariff rates by country, authority, and product category, with weighted effective tariff rate trends over time.</p>
+        <a class="port-link" href="https://www.send.co/a/91W5Rc7n" target="_blank" rel="noopener noreferrer">View Live Demo &rarr;</a>
+      </div>
+
+      <div class="port-card">
+        <div class="port-icon">$</div>
+        <span class="port-tag">Cost Modeling</span>
+        <h3>Precision Sourcing RFQ Portal</h3>
+        <p>A component-level RFQ inquiry tool with unit cost breakdown, BOM detail, packaging specs, and EMS supplier comparison for a lens-manufacturing scenario.</p>
+        <a class="port-link" href="https://www.send.co/a/Msx5UaPh" target="_blank" rel="noopener noreferrer">View Live Demo &rarr;</a>
+      </div>
+
+      <div class="port-card">
+        <div class="port-icon">&#9650;</div>
+        <span class="port-tag">Risk &amp; Continuity</span>
+        <h3>Executive Sourcing War Room</h3>
+        <p>An executive-level supply risk dashboard tracing sourcing exposure through material and process nodes, with transition capital estimates and vetted alternate-supplier tracking.</p>
+        <a class="port-link" href="https://www.send.co/a/YpKXpoGd" target="_blank" rel="noopener noreferrer">View Live Demo &rarr;</a>
+      </div>
+
+      <div class="port-card">
+        <div class="port-icon">&#8644;</div>
+        <span class="port-tag">Supplier Relationship</span>
+        <h3>Supplier Relationship &amp; Sourcing Pipeline</h3>
+        <p>A pipeline view of the supplier lifecycle from strategy through RFI, NDA, RFQ, contract, and award &mdash; with regional exposure and risk flags at each stage.</p>
+        <a class="port-link" href="https://www.send.co/a/qQeAemiM" target="_blank" rel="noopener noreferrer">View Live Demo &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="two-col">
+      <div class="list-block">
+        <h3>Education &amp; Certifications</h3>
+        <div class="edu-item">
+          <div class="deg">CPSM Certification</div>
+          <div class="school">Institute for Supply Management &middot; 2017</div>
+        </div>
+        <div class="edu-item">
+          <div class="deg">MBA, Business Administration</div>
+          <div class="school">California Coast University &middot; 2016&ndash;2017</div>
+        </div>
+        <div class="edu-item">
+          <div class="deg">BA, Psychology</div>
+          <div class="school">California State University, East Bay &middot; 2010&ndash;2013</div>
+        </div>
+        <div class="edu-item">
+          <div class="deg">AA, Psychology</div>
+          <div class="school">Diablo Valley College &middot; 2008&ndash;2010</div>
+        </div>
+
+        <h3 style="margin-top:34px;">Personal Achievements</h3>
+        <div class="achieve-item"><strong>2019:</strong> Rodan &amp; Fields Top Banana Award</div>
+        <div class="achieve-item"><strong>2014:</strong> Shell Oil EVP Nominee Award for Exceptional Delivery</div>
+        <div class="achieve-item"><strong>2012:</strong> Alta Bates Medical Center Employee of the Quarter</div>
+        <div class="achieve-item"><strong>2011:</strong> Alta Bates Medical Center Shining Star Award</div>
+      </div>
+
+      <div class="list-block">
+        <h3>Systems &amp; Tools</h3>
+        <div class="pill-wrap">
+          <span class="pill">SAP S/4HANA &amp; ECC</span>
+          <span class="pill">MS Power Platform</span>
+          <span class="pill">Master Data Governance</span>
+          <span class="pill">Fiori</span>
+          <span class="pill">D&amp;B Analytics</span>
+          <span class="pill">Jaggaer</span>
+          <span class="pill">GHX</span>
+          <span class="pill">Scout RFP</span>
+          <span class="pill">Cognos (BI Reporting)</span>
+          <span class="pill">SharePoint</span>
+          <span class="pill">Claude / Copilot / Gemini / ChatGPT</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-name">Valerie Bagala</div>
+    <div><a href="mailto:VRBagala@gmail.com">VRBagala@gmail.com</a> &nbsp;&middot;&nbsp; 415-740-5874 &nbsp;&middot;&nbsp; Mountain House, CA</div>
+    <div style="margin-top:14px;opacity:0.7;">&copy; 2026 Valerie Bagala. Portfolio builds are concept demonstrations on illustrative data.</div>
+  </div>
+</footer>
+
+</body>
+</html>
