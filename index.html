@@ -159,6 +159,64 @@
   .port-link:hover{color:var(--gold-light);}
   .port-card.wide{grid-column:span 2;}
 
+  /* Lifecycle framework */
+  .phase-label{
+    font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);
+    margin:0 0 6px;
+  }
+  .phase-block{margin-top:52px;}
+  .phase-block:first-of-type{margin-top:0;}
+  .phase-sub{font-size:14px;color:var(--text-on-navy-muted);margin-bottom:24px;}
+
+  .step-overview-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px;
+  }
+  .step-overview-box{background:var(--navy-2);border:1px solid var(--border-navy);padding:20px 18px;}
+  .step-overview-box .num{font-size:22px;font-weight:800;color:var(--gold);margin-bottom:8px;}
+  .step-overview-box h4{font-size:13.5px;color:var(--text-on-navy);margin-bottom:6px;font-weight:700;}
+  .step-overview-box p{font-size:12px;color:var(--text-on-navy-muted);line-height:1.5;}
+
+  .step-detail{border:1px solid var(--border-navy);background:var(--navy-2);padding:26px 28px;margin-bottom:16px;}
+  .step-detail-head{display:flex;align-items:center;gap:14px;margin-bottom:16px;flex-wrap:wrap;}
+  .step-detail-head .num{font-size:26px;font-weight:800;color:var(--gold);}
+  .step-detail-head h4{font-size:17px;color:var(--text-on-navy);font-weight:700;}
+  .step-detail-head .stage-tag{
+    font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);
+    border:1px solid rgba(184,154,90,0.4);padding:3px 9px;border-radius:20px;
+  }
+  .step-detail dl{display:grid;grid-template-columns:130px 1fr;gap:8px 16px;font-size:13.5px;color:var(--text-on-navy-muted);}
+  .step-detail dt{color:var(--gold-light);font-weight:700;font-size:11px;letter-spacing:0.5px;text-transform:uppercase;padding-top:2px;}
+  .step-detail dd{margin:0;line-height:1.6;}
+
+  .step-tools{margin-top:20px;padding-top:20px;border-top:1px dashed var(--border-navy);}
+  .step-tools-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+  .tool-mini-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;}
+  .tool-mini{background:var(--navy);border:1px solid var(--border-navy);padding:16px 18px;transition:border-color .15s;}
+  .tool-mini:hover{border-color:var(--gold);}
+  .tool-mini .tool-mini-tag{font-size:10px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;display:block;}
+  .tool-mini h5{font-size:13.5px;color:var(--text-on-navy);font-weight:700;margin-bottom:6px;}
+  .tool-mini p{font-size:12px;color:var(--text-on-navy-muted);margin-bottom:10px;line-height:1.5;}
+  .tool-mini a{font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:var(--gold);}
+  .tool-mini a:hover{color:var(--gold-light);}
+
+  .gate-callout{
+    border:1px solid rgba(184,154,90,0.4);background:rgba(184,154,90,0.08);
+    padding:22px 26px;margin:8px 0 52px;font-size:13.5px;color:var(--gold-light);line-height:1.8;
+  }
+  .gate-callout .gate-title{
+    font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;
+  }
+  .gate-callout strong{color:var(--text-on-navy);}
+
+  .matrix-wrap{overflow-x:auto;margin-top:20px;}
+  .matrix-table{width:100%;border-collapse:collapse;font-size:13px;min-width:640px;}
+  .matrix-table th{
+    text-align:left;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);
+    padding:10px 14px;border-bottom:1px solid var(--border-navy);
+  }
+  .matrix-table td{padding:13px 14px;border-bottom:1px solid var(--border-navy);color:var(--text-on-navy-muted);}
+  .matrix-table td:first-child{color:var(--text-on-navy);font-weight:700;}
+
   /* Education / systems */
   .two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
   .list-block h3{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
@@ -185,6 +243,9 @@
     .port-grid{grid-template-columns:1fr;}
     .port-card.wide{grid-column:span 1;}
     .two-col{grid-template-columns:1fr;gap:36px;}
+    .step-overview-grid{grid-template-columns:1fr 1fr;}
+    .step-detail dl{grid-template-columns:1fr;}
+    .step-detail dt{padding-top:8px;}
   }
 </style>
 </head>
@@ -324,62 +385,254 @@
   <div class="wrap">
     <div class="section-label on-navy">
       <div class="eyebrow">Portfolio</div>
-      <h2>Sourcing Systems I've Designed &amp; Built</h2>
+      <h2>How I Run the Full Sourcing &amp; Material Lifecycle</h2>
     </div>
     <div class="note-box">
-      These are concept builds I designed to demonstrate how I think about sourcing systems &mdash; supplier data architecture, RFQ workflows, tariff exposure, and risk monitoring. They run on illustrative datasets for demonstration purposes, not live production data.
+      This is the end-to-end framework I use to manage suppliers and materials from early R&amp;D concept through end-of-life &mdash; spanning New Product Development (NPD), New Product Introduction (NPI), sustaining Production, Life Cycle Management (LCM), and Life Cycle Extension / End-of-Life (LCE/EOL). The tools below are concept builds mapped to the stage of the lifecycle they support &mdash; they run on illustrative datasets for demonstration purposes, not live production data.
     </div>
-    <div class="port-grid">
 
-      <div class="port-card wide">
-        <div class="port-icon">CS</div>
-        <span class="port-tag">Case Study</span>
-        <h3>Rebuilding a $7M+ PCBA Category Through a Competitive RFP</h3>
-        <p>A strategic sourcing engagement covering PCBA and electronics board assembly, from category profiling through a 4-scenario award analysis and a tiered supplier transition plan. Company and supplier identities generalized for confidentiality.</p>
-        <a class="port-link" href="https://www.send.co/a/Wq1fuaUx" target="_blank" rel="noopener noreferrer">Read Case Study &rarr;</a>
+    <div class="phase-block">
+      <div class="phase-label">Phase 1 &middot; Steps 1&ndash;4</div>
+      <h3 style="color:var(--text-on-navy);font-size:20px;margin-bottom:8px;">New Product Development &amp; Introduction (NPD / NPI)</h3>
+      <p class="phase-sub">Sourcing shapes the design, selects the right long-term partners, and locks in commercial terms before a single unit hits mass production.</p>
+
+      <div class="step-overview-grid">
+        <div class="step-overview-box">
+          <div class="num">1</div>
+          <h4>Demand &amp; Early Strategy</h4>
+          <p>Align technical specs with supplier capability during R&amp;D design.</p>
+        </div>
+        <div class="step-overview-box">
+          <div class="num">2</div>
+          <h4>Sourcing &amp; Supplier Selection</h4>
+          <p>Run RFx, evaluate TCO, select strategic long-term partners.</p>
+        </div>
+        <div class="step-overview-box">
+          <div class="num">3</div>
+          <h4>Contracting &amp; Onboarding</h4>
+          <p>Lock commercial, quality, and IP terms before pilot builds.</p>
+        </div>
+        <div class="step-overview-box">
+          <div class="num">4</div>
+          <h4>Qualification &amp; Pilot Build</h4>
+          <p>Prove process capability and quality before commercial launch.</p>
+        </div>
       </div>
 
-      <div class="port-card wide">
-        <div class="port-icon">RFQ</div>
-        <span class="port-tag">Supplier Data &amp; RFQ</span>
-        <h3>Sourcing Backend &amp; RFQ Console</h3>
-        <p>A supplier / material / assembly database concept built as the backend data source for RFQ creation &mdash; searchable supplier directory, material &amp; assembly catalog, and an RFQ/RFI builder, covering hundreds of suppliers across categories and geographies.</p>
-        <a class="port-link" href="https://www.send.co/a/IUjAkZV7" target="_blank" rel="noopener noreferrer">View Live Demo &rarr;</a>
+      <div class="step-detail">
+        <div class="step-detail-head">
+          <span class="num">1</span>
+          <h4>Demand Identification &amp; Early Strategy</h4>
+          <span class="stage-tag">NPD</span>
+        </div>
+        <dl>
+          <dt>Objective</dt><dd>Align technical specifications with supplier capabilities early in the R&amp;D design phase.</dd>
+          <dt>Key Activities</dt><dd>Design for Manufacturability/Assembly (DFM/DFA) reviews, technology roadmap alignment, preferred supplier list (PSL) screening.</dd>
+          <dt>Deliverables</dt><dd>Preferred component selection, Design-to-Cost (DTC) baseline, initial supplier risk assessment.</dd>
+        </dl>
       </div>
 
-      <div class="port-card">
-        <div class="port-icon">%</div>
-        <span class="port-tag">Tariff &amp; Trade</span>
-        <h3>US Tariff Rate Tracker</h3>
-        <p>Tracks statutory U.S. import tariff rates by country, authority, and product category, with weighted effective tariff rate trends over time.</p>
-        <a class="port-link" href="https://www.send.co/a/91W5Rc7n" target="_blank" rel="noopener noreferrer">View Live Demo &rarr;</a>
+      <div class="step-detail">
+        <div class="step-detail-head">
+          <span class="num">2</span>
+          <h4>Sourcing, RFx &amp; Supplier Selection</h4>
+          <span class="stage-tag">NPD / NPI</span>
+        </div>
+        <dl>
+          <dt>Objective</dt><dd>Select long-term strategic partners, not just prototype suppliers.</dd>
+          <dt>Key Activities</dt><dd>RFI/RFP/RFQ execution, total cost of ownership (TCO) evaluation, dual-sourcing strategy determination.</dd>
+          <dt>Deliverables</dt><dd>Sourcing recommendation board approval, prototype PO issuance, supplier capability audit.</dd>
+        </dl>
+        <div class="step-tools">
+          <div class="step-tools-label">Tools I Built for This Stage</div>
+          <div class="tool-mini-grid">
+            <div class="tool-mini">
+              <span class="tool-mini-tag">Case Study</span>
+              <h5>Rebuilding a $7M+ PCBA Category Through a Competitive RFP</h5>
+              <p>Category profiling through a 4-scenario award analysis and tiered supplier transition plan. Identities generalized for confidentiality.</p>
+              <a href="https://www.send.co/a/Wq1fuaUx" target="_blank" rel="noopener noreferrer">Read Case Study &rarr;</a>
+            </div>
+            <div class="tool-mini">
+              <span class="tool-mini-tag">Supplier Data &amp; RFQ</span>
+              <h5>Sourcing Backend &amp; RFQ Console</h5>
+              <p>Searchable supplier directory, material &amp; assembly catalog, and RFQ/RFI builder covering hundreds of suppliers across categories and geographies.</p>
+              <a href="https://www.send.co/a/IUjAkZV7" target="_blank" rel="noopener noreferrer">View Live Demo &rarr;</a>
+            </div>
+            <div class="tool-mini">
+              <span class="tool-mini-tag">Cost Modeling</span>
+              <h5>Precision Sourcing RFQ Portal</h5>
+              <p>Component-level RFQ tool with unit cost breakdown, BOM detail, and EMS supplier comparison for a lens-manufacturing scenario.</p>
+              <a href="https://www.send.co/a/Msx5UaPh" target="_blank" rel="noopener noreferrer">View Live Demo &rarr;</a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="port-card">
-        <div class="port-icon">$</div>
-        <span class="port-tag">Cost Modeling</span>
-        <h3>Precision Sourcing RFQ Portal</h3>
-        <p>A component-level RFQ inquiry tool with unit cost breakdown, BOM detail, packaging specs, and EMS supplier comparison for a lens-manufacturing scenario.</p>
-        <a class="port-link" href="https://www.send.co/a/Msx5UaPh" target="_blank" rel="noopener noreferrer">View Live Demo &rarr;</a>
+      <div class="step-detail">
+        <div class="step-detail-head">
+          <span class="num">3</span>
+          <h4>Contracting, Tooling &amp; Onboarding</h4>
+          <span class="stage-tag">NPI</span>
+        </div>
+        <dl>
+          <dt>Objective</dt><dd>Lock in commercial, quality, and IP terms prior to pilot builds.</dd>
+          <dt>Key Activities</dt><dd>Master Services/Supply Agreement (MSA), Quality Assurance Agreement (QAA), tooling authorization (NRE), master data setup in ERP/PLM.</dd>
+          <dt>Deliverables</dt><dd>Executed contracts, tooling POs, system part number &amp; vendor master creation.</dd>
+        </dl>
+        <div class="step-tools">
+          <div class="step-tools-label">Tools I Built for This Stage</div>
+          <div class="tool-mini-grid">
+            <div class="tool-mini">
+              <span class="tool-mini-tag">Supplier Relationship</span>
+              <h5>Supplier Relationship &amp; Sourcing Pipeline</h5>
+              <p>Pipeline view of the supplier lifecycle from strategy through RFI, NDA, RFQ, contract, and award &mdash; with regional exposure and risk flags at each stage.</p>
+              <a href="https://www.send.co/a/qQeAemiM" target="_blank" rel="noopener noreferrer">View Live Demo &rarr;</a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="port-card">
-        <div class="port-icon">&#9650;</div>
-        <span class="port-tag">Risk &amp; Continuity</span>
-        <h3>Executive Sourcing War Room</h3>
-        <p>An executive-level supply risk dashboard tracing sourcing exposure through material and process nodes, with transition capital estimates and vetted alternate-supplier tracking.</p>
-        <a class="port-link" href="https://www.send.co/a/YpKXpoGd" target="_blank" rel="noopener noreferrer">View Live Demo &rarr;</a>
+      <div class="step-detail">
+        <div class="step-detail-head">
+          <span class="num">4</span>
+          <h4>Qualification, Validation &amp; Pilot Build</h4>
+          <span class="stage-tag">NPI</span>
+        </div>
+        <dl>
+          <dt>Objective</dt><dd>Prove process capability and product quality before commercial launch.</dd>
+          <dt>Key Activities</dt><dd>First Article Inspection (FAI), Production Part Approval Process (PPAP) / component qualification, pilot run evaluation, yield optimization.</dd>
+          <dt>Deliverables</dt><dd>Approved PPAP/qualification dossier, mass production pricing activation, ramp readiness assessment.</dd>
+        </dl>
       </div>
-
-      <div class="port-card">
-        <div class="port-icon">&#8644;</div>
-        <span class="port-tag">Supplier Relationship</span>
-        <h3>Supplier Relationship &amp; Sourcing Pipeline</h3>
-        <p>A pipeline view of the supplier lifecycle from strategy through RFI, NDA, RFQ, contract, and award &mdash; with regional exposure and risk flags at each stage.</p>
-        <a class="port-link" href="https://www.send.co/a/qQeAemiM" target="_blank" rel="noopener noreferrer">View Live Demo &rarr;</a>
-      </div>
-
     </div>
+
+    <div class="gate-callout">
+      <div class="gate-title">NPI &rarr; Production Transfer Criteria</div>
+      Before a part or supplier moves out of NPI into sustaining production, I hold it to explicit transfer criteria: <strong>Commercial</strong> &mdash; final negotiated volume-tier pricing active in ERP, executed MSA and QAA on file. <strong>Quality</strong> &mdash; 100% completed FAI/PPAP approval, zero open critical issues. <strong>Supply Chain</strong> &mdash; safety stock/consignment agreement established, lead times locked, ERP master data complete.
+    </div>
+
+    <div class="phase-block">
+      <div class="phase-label">Phase 2 &middot; Steps 5&ndash;8</div>
+      <h3 style="color:var(--text-on-navy);font-size:20px;margin-bottom:8px;">Commercialization &amp; Lifecycle Management (Production, LCM &amp; LCE)</h3>
+      <p class="phase-sub">Once handed off to production, the focus shifts to delivery performance, cost optimization, quality control, and continuity of supply through end-of-life.</p>
+
+      <div class="step-overview-grid">
+        <div class="step-overview-box">
+          <div class="num">5</div>
+          <h4>Commercial Execution &amp; Ramp</h4>
+          <p>Scale to steady-state demand while securing capacity.</p>
+        </div>
+        <div class="step-overview-box">
+          <div class="num">6</div>
+          <h4>Performance &amp; Value Engineering</h4>
+          <p>Maintain supplier health and drive continuous cost-out.</p>
+        </div>
+        <div class="step-overview-box">
+          <div class="num">7</div>
+          <h4>Life Cycle &amp; Obsolescence</h4>
+          <p>Manage PCNs, EOL notices, and extended service support.</p>
+        </div>
+        <div class="step-overview-box">
+          <div class="num">8</div>
+          <h4>End-of-Life &amp; Offboarding</h4>
+          <p>Phase out materials and contracts with zero E&amp;O exposure.</p>
+        </div>
+      </div>
+
+      <div class="step-detail">
+        <div class="step-detail-head">
+          <span class="num">5</span>
+          <h4>Commercial Execution &amp; Ramp</h4>
+          <span class="stage-tag">Production</span>
+        </div>
+        <dl>
+          <dt>Objective</dt><dd>Transition from development volumes to steady-state demand while securing capacity.</dd>
+          <dt>Key Activities</dt><dd>MRP execution, kanban/consignment setup, lead-time management, capacity reservation, ramp monitoring.</dd>
+          <dt>Deliverables</dt><dd>Purchase order execution, On-Time In-Full (OTIF) tracking, capacity audits.</dd>
+        </dl>
+      </div>
+
+      <div class="step-detail">
+        <div class="step-detail-head">
+          <span class="num">6</span>
+          <h4>Supplier Performance &amp; Value Engineering</h4>
+          <span class="stage-tag">Production / LCM</span>
+        </div>
+        <dl>
+          <dt>Objective</dt><dd>Maintain supplier health and drive continuous cost/quality improvements.</dd>
+          <dt>Key Activities</dt><dd>Quarterly Business Reviews (QBRs), Supplier Corrective Action Requests (SCARs), Value Engineering/Value Analysis (VA/VE) projects.</dd>
+          <dt>Deliverables</dt><dd>Supplier scorecards, annualized cost-out projects, second-source qualifications.</dd>
+        </dl>
+        <div class="step-tools">
+          <div class="step-tools-label">Tools I Built for This Stage</div>
+          <div class="tool-mini-grid">
+            <div class="tool-mini">
+              <span class="tool-mini-tag">Tariff &amp; Trade</span>
+              <h5>US Tariff Rate Tracker</h5>
+              <p>Tracks statutory U.S. import tariff rates by country, authority, and product category, with weighted effective tariff rate trends over time.</p>
+              <a href="https://www.send.co/a/91W5Rc7n" target="_blank" rel="noopener noreferrer">View Live Demo &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-detail">
+        <div class="step-detail-head">
+          <span class="num">7</span>
+          <h4>Life Cycle Management &amp; Obsolescence</h4>
+          <span class="stage-tag">LCM / LCE</span>
+        </div>
+        <dl>
+          <dt>Objective</dt><dd>Manage product changes, component end-of-life notices, and extended service support.</dd>
+          <dt>Key Activities</dt><dd>Product/Process Change Notification (PCN) reviews, component obsolescence monitoring, redesign-for-extended-life (LCE) initiatives.</dd>
+          <dt>Deliverables</dt><dd>PCN approvals, bridge stock planning, alternate component sourcing.</dd>
+        </dl>
+        <div class="step-tools">
+          <div class="step-tools-label">Tools I Built for This Stage</div>
+          <div class="tool-mini-grid">
+            <div class="tool-mini">
+              <span class="tool-mini-tag">Risk &amp; Continuity</span>
+              <h5>Executive Sourcing War Room</h5>
+              <p>Executive-level supply risk dashboard tracing exposure through material and process nodes, with transition capital estimates and vetted alternate-supplier tracking.</p>
+              <a href="https://www.send.co/a/YpKXpoGd" target="_blank" rel="noopener noreferrer">View Live Demo &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-detail">
+        <div class="step-detail-head">
+          <span class="num">8</span>
+          <h4>End-of-Life &amp; Supplier Offboarding</h4>
+          <span class="stage-tag">LCE / EOL</span>
+        </div>
+        <dl>
+          <dt>Objective</dt><dd>Controlled phase-out of materials and supplier contracts with zero excess and obsolescence (E&amp;O) exposure.</dd>
+          <dt>Key Activities</dt><dd>Last Time Buy (LTB) negotiations, spare/service parts strategy, tooling disposition, ERP master data inactivation.</dd>
+          <dt>Deliverables</dt><dd>LTB POs, tooling return/scrap certificates, formal contract terminations.</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="phase-block">
+      <h3 style="color:var(--text-on-navy);font-size:18px;margin-bottom:4px;">Lifecycle Stage Mapping</h3>
+      <p class="phase-sub">How the eight sourcing steps roll up into the five material lifecycle stages.</p>
+      <div class="matrix-wrap">
+        <table class="matrix-table">
+          <thead>
+            <tr><th>Lifecycle Stage</th><th>Primary Focus</th><th>Sourcing Steps</th><th>Key Gate Deliverable</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>NPD</td><td>Technology, DFM, supplier selection</td><td>Steps 1&ndash;2</td><td>Approved sourcing strategy &amp; concept sign-off</td></tr>
+            <tr><td>NPI</td><td>Contracting, PPAP, ramp readiness</td><td>Steps 3&ndash;4</td><td>PPAP approval &amp; production transfer gate</td></tr>
+            <tr><td>Production (Sustaining)</td><td>OTIF, quality, cost-out, supply assurance</td><td>Steps 5&ndash;6</td><td>Quarterly supplier scorecard &amp; savings tracker</td></tr>
+            <tr><td>LCM</td><td>PCN control, VA/VE, capacity expansion</td><td>Steps 6&ndash;7</td><td>Change order sign-off &amp; capacity audit</td></tr>
+            <tr><td>LCE / EOL</td><td>Obsolescence, LTB, service parts, scrap</td><td>Steps 7&ndash;8</td><td>LTB execution &amp; tooling disposition</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
   </div>
 </section>
 
