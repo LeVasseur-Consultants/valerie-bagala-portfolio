@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strategic Sourcing Case Study — Global PCBA Category RFP</title>
+</head>
+<body>
+<style>
+  :root{
+    --navy:#0D1B2A;
+    --navy-2:#132538;
+    --gold:#B89A5A;
+    --gold-light:#D8C08A;
+    --cream:#F5F0E8;
+    --cream-2:#FDFAF5;
+    --text-dark:#0D1B2A;
+    --text-muted:#5B6572;
+    --text-on-navy:#FDFAF5;
+    --text-on-navy-muted:#AEB8C4;
+    --border-navy:rgba(253,250,245,0.10);
+    --border-cream:rgba(13,27,42,0.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:Arial,"Helvetica Neue",Helvetica,sans-serif;
+    background:var(--cream);
+    color:var(--text-dark);
+    line-height:1.6;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);
+  }
+  h1,h2,h3{font-weight:800;letter-spacing:-0.3px;}
+  section{padding:64px 0;}
+
+  /* Topbar */
+  .topbar{background:var(--cream-2);border-bottom:1px solid var(--border-cream);padding:18px 0;}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;}
+  .topbar .brand{font-size:15px;font-weight:800;color:var(--navy);}
+  .topbar .brand span{color:var(--gold);}
+  .topbar .back{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--navy);opacity:0.7;}
+  .topbar .back:hover{opacity:1;}
+
+  /* Hero */
+  .hero{background:var(--navy);color:var(--text-on-navy);padding:76px 0 56px;}
+  .hero h1{font-size:38px;line-height:1.15;margin:16px 0 18px;max-width:760px;}
+  .hero p.lead{max-width:660px;font-size:16px;color:var(--text-on-navy-muted);margin-bottom:30px;}
+  .confidentiality{
+    border:1px solid rgba(184,154,90,0.4);background:rgba(184,154,90,0.08);
+    padding:14px 18px;border-radius:2px;font-size:12.5px;color:var(--gold-light);
+    max-width:720px;line-height:1.6;margin-bottom:36px;
+  }
+  .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border-navy);border:1px solid var(--border-navy);max-width:900px;}
+  .stat{background:var(--navy-2);padding:20px 18px;}
+  .stat .num{font-size:26px;font-weight:800;color:var(--gold-light);}
+  .stat .label{font-size:11.5px;color:var(--text-on-navy-muted);text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
+
+  /* Section label */
+  .section-label{margin-bottom:38px;}
+  .section-label h2{font-size:28px;color:var(--navy);margin-top:8px;}
+  .section-label.on-navy h2{color:var(--text-on-navy);}
+  .section-label p{color:var(--text-muted);max-width:640px;font-size:14px;margin-top:10px;}
+  .section-label.on-navy p{color:var(--text-on-navy-muted);}
+
+  /* Current/future table */
+  .cf-table{width:100%;border-collapse:collapse;}
+  .cf-table th{
+    text-align:left;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);
+    padding:10px 14px;border-bottom:2px solid var(--border-cream);
+  }
+  .cf-table td{padding:14px;font-size:13.5px;border-bottom:1px solid var(--border-cream);vertical-align:top;}
+  .cf-table td.dim{font-weight:700;color:var(--navy);width:16%;}
+  .cf-table td.current{color:#7a4a3a;width:38%;}
+  .cf-table td.future{color:#2c6b4f;width:38%;}
+
+  /* Process band */
+  .process-band{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;}
+  .p-step{background:var(--navy-2);border:1px solid var(--border-navy);padding:16px 12px;text-align:left;}
+  .p-step .n{font-size:20px;font-weight:800;color:var(--gold);margin-bottom:8px;}
+  .p-step .t{font-size:12.5px;font-weight:700;color:var(--text-on-navy);margin-bottom:6px;}
+  .p-step .d{font-size:11px;color:var(--text-on-navy-muted);line-height:1.5;}
+
+  /* Segmentation cards */
+  .seg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .seg-card{background:var(--cream-2);border:1px solid var(--border-cream);padding:20px;}
+  .seg-card h3{font-size:14.5px;color:var(--navy);margin-bottom:10px;}
+  .seg-card p{font-size:12.5px;color:var(--text-muted);}
+
+  /* Criteria list */
+  .crit-row{display:grid;grid-template-columns:220px 1fr 90px;gap:18px;padding:14px 0;border-bottom:1px solid var(--border-cream);align-items:start;}
+  .crit-row .name{font-weight:700;font-size:13.5px;color:var(--navy);}
+  .crit-row .desc{font-size:13px;color:var(--text-muted);}
+  .imp{font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;width:fit-content;}
+  .imp.high{background:rgba(184,154,90,0.18);color:var(--gold);}
+  .imp.med{background:rgba(13,27,42,0.08);color:var(--navy);}
+
+  /* Score distribution */
+  .dist-wrap{background:var(--navy-2);border:1px solid var(--border-navy);padding:28px;}
+  .dist-bar{display:flex;height:34px;border-radius:2px;overflow:hidden;margin-bottom:14px;}
+  .dist-seg{display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--navy);}
+  .dist-leading{background:var(--gold);}
+  .dist-competitive{background:var(--gold-light);}
+  .dist-lagging{background:rgba(253,250,245,0.25);color:var(--text-on-navy);}
+  .dist-legend{display:flex;gap:26px;font-size:11.5px;color:var(--text-on-navy-muted);}
+  .dist-legend span.dot{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;}
+
+  /* Scenario bars */
+  .scenario-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:end;}
+  .scenario-col{display:flex;flex-direction:column;align-items:center;}
+  .scenario-bar-wrap{height:160px;display:flex;align-items:flex-end;width:100%;justify-content:center;}
+  .scenario-bar{width:56%;background:var(--navy);border-radius:2px 2px 0 0;position:relative;}
+  .scenario-bar .pct{position:absolute;top:-22px;left:0;right:0;text-align:center;font-size:14px;font-weight:800;color:var(--navy);}
+  .scenario-name{font-size:11.5px;font-weight:700;color:var(--navy);margin-top:10px;text-align:center;}
+  .scenario-desc{font-size:10.5px;color:var(--text-muted);text-align:center;margin-top:2px;}
+
+  /* Tier cards */
+  .tier-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .tier-card{background:var(--navy-2);border:1px solid var(--border-navy);padding:24px;}
+  .tier-card h3{font-size:14px;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;}
+  .tier-item{padding:12px 0;border-bottom:1px solid var(--border-navy);}
+  .tier-item:last-child{border-bottom:none;}
+  .tier-item .tname{font-weight:700;font-size:13.5px;color:var(--text-on-navy);}
+  .tier-item .tmeta{font-size:11.5px;color:var(--gold-light);margin:3px 0;}
+  .tier-item .trat{font-size:12px;color:var(--text-on-navy-muted);}
+
+  /* Timeline */
+  .timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .tl-col{background:var(--cream-2);border:1px solid var(--border-cream);padding:20px;}
+  .tl-col h3{font-size:13px;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;}
+  .tl-col ul{padding-left:16px;}
+  .tl-col li{font-size:12.5px;color:var(--text-muted);margin-bottom:8px;}
+
+  /* Cost chart */
+  .cost-chart{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;align-items:end;}
+  .cost-col{display:flex;flex-direction:column;align-items:center;}
+  .cost-bars{display:flex;gap:5px;align-items:flex-end;height:150px;}
+  .cost-bar{width:20px;border-radius:2px 2px 0 0;position:relative;}
+  .cost-bar.industry{background:rgba(253,250,245,0.3);}
+  .cost-bar.rfp{background:var(--gold);}
+  .cost-bar .v{position:absolute;top:-18px;left:0;right:0;text-align:center;font-size:10px;font-weight:700;color:var(--text-on-navy-muted);}
+  .cost-bar.rfp .v{color:var(--gold-light);}
+  .cost-label{font-size:10.5px;color:var(--text-on-navy-muted);text-align:center;margin-top:8px;}
+  .cost-legend{display:flex;gap:22px;font-size:11.5px;color:var(--text-on-navy-muted);margin-top:22px;}
+  .cost-legend span.dot{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;}
+
+  /* Impact */
+  .impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .impact-card{background:var(--cream-2);border:1px solid var(--border-cream);padding:22px;text-align:left;}
+  .impact-card .num{font-size:28px;font-weight:800;color:var(--navy);}
+  .impact-card .label{font-size:12px;color:var(--text-muted);margin-top:6px;}
+
+  footer{background:var(--navy);color:var(--text-on-navy-muted);padding:40px 0;text-align:center;font-size:12.5px;border-top:1px solid var(--border-navy);}
+  footer a{color:var(--gold);font-weight:700;}
+  footer a:hover{color:var(--gold-light);}
+
+  @media(max-width:860px){
+    .stat-row{grid-template-columns:repeat(2,1fr);}
+    .process-band{grid-template-columns:repeat(2,1fr);}
+    .seg-grid{grid-template-columns:1fr 1fr;}
+    .crit-row{grid-template-columns:1fr;gap:6px;}
+    .scenario-grid{grid-template-columns:repeat(2,1fr);}
+    .tier-grid{grid-template-columns:1fr;}
+    .timeline{grid-template-columns:1fr;}
+    .cost-chart{grid-template-columns:repeat(3,1fr);row-gap:30px;}
+    .impact-grid{grid-template-columns:1fr 1fr;}
+  }
+</style>
+
+<section>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="brand">VALERIE <span>BAGALA</span></div>
+      <a class="back" href="index.html">← Back to Portfolio</a>
+    </div>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Portfolio Case Study &middot; Strategic Sourcing</div>
+    <h1>Rebuilding a $7M+ PCBA Category Through a Competitive, Data-Driven RFP</h1>
+    <p class="lead">Applying an end-to-end 7-step strategic sourcing methodology to a global PCBA (printed circuit board assembly) category for a medical device technology company &mdash; from category profiling through a 4-scenario award analysis and a tiered supplier transition plan.</p>
+    <div class="confidentiality">
+      This case study illustrates the sourcing methodology and analytical rigor I bring to technical, engineering-driven categories &mdash; including the PCBA and electronics component sourcing I manage today. Company, supplier, and team identities have been generalized, and figures reflect a representative engagement built on real process and real outcomes.
+    </div>
+    <div class="stat-row">
+      <div class="stat"><div class="num">$7.7M</div><div class="label">Annual PCBA Category Spend</div></div>
+      <div class="stat"><div class="num">19</div><div class="label">Suppliers Competitively Bid</div></div>
+      <div class="stat"><div class="num">4</div><div class="label">Award Scenarios Modeled</div></div>
+      <div class="stat"><div class="num">Up to 35%</div><div class="label">Identified Savings Potential</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">
+      <div class="eyebrow">Objective</div>
+      <h2>From Reactive Buying to a Managed Category</h2>
+      <p>The category had never been competitively bid. The objective was to identify at least two key strategic PCBA/EMS partners with the right mix of manufacturing capability, quality, and pricing &mdash; while building the market intelligence and should-cost model the category had never had.</p>
+    </div>
+    <table class="cf-table">
+      <tr><th>Dimension</th><th>Current State</th><th>Target State</th></tr>
+      <tr><td class="dim">Capability</td><td class="current">Gaps in complex, multi-layer board capability across parts of the existing EMS base</td><td class="future">Global strategic PCBA partners with full manufacturing visibility</td></tr>
+      <tr><td class="dim">Supply Chain</td><td class="current">Long lead times and component allocation risk on key parts</td><td class="future">Reduced, more predictable lead times with proactive allocation planning</td></tr>
+      <tr><td class="dim">Quality</td><td class="current">Inconsistent first-pass yield and defect rates</td><td class="future">Robust, IPC-certified quality processes</td></tr>
+      <tr><td class="dim">Value Add</td><td class="current">Limited DFM and NPI engineering support from existing base</td><td class="future">Strong DFM support and NPI engineering partnership</td></tr>
+      <tr><td class="dim">Risk</td><td class="current">No formal component-shortage or single-source risk assessment</td><td class="future">Actively managed component risk and multi-source qualification</td></tr>
+      <tr><td class="dim">Competitiveness</td><td class="current">No competitive bidding or TCO analysis</td><td class="future">Competitive pricing and should-cost-validated quotes</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="section-label on-navy">
+      <div class="eyebrow">Methodology</div>
+      <h2>A Repeatable 7-Step Sourcing Process</h2>
+      <p>This engagement ran on a structured category sourcing framework I use across comprehensive sourcing events &mdash; built for high-value, cross-functional categories requiring formal market analysis and gate reviews.</p>
+    </div>
+    <div class="process-band">
+      <div class="p-step"><div class="n">1</div><div class="t">Profile Category</div><div class="d">Understand internal spend and external market</div></div>
+      <div class="p-step"><div class="n">2</div><div class="t">Develop Strategy</div><div class="d">Create the "go to market" approach</div></div>
+      <div class="p-step"><div class="n">3</div><div class="t">Generate Portfolio</div><div class="d">Open the supply base and identify viable suppliers</div></div>
+      <div class="p-step"><div class="n">4</div><div class="t">Select Path</div><div class="d">Decide the most appropriate execution strategy</div></div>
+      <div class="p-step"><div class="n">5</div><div class="t">Negotiate & Select</div><div class="d">Conduct aggressive negotiations, select suppliers</div></div>
+      <div class="p-step"><div class="n">6</div><div class="t">Operationalize</div><div class="d">Stand up supplier agreements and integration</div></div>
+      <div class="p-step"><div class="n">7</div><div class="t">Sustain Results</div><div class="d">Monitor market and supplier performance</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">
+      <div class="eyebrow">Category Segmentation</div>
+      <h2>Four Board Families, Four Different Manufacturing Profiles</h2>
+      <p>Rather than sourcing PCBA as one category, the spend was segmented by board complexity and manufacturing process &mdash; each with a different sourcing approach.</p>
+    </div>
+    <div class="seg-grid">
+      <div class="seg-card"><h3>Standard / Commodity PCBA</h3><p>High-volume, low-layer-count boards. Lean SMT lines, short lead times, and strong cost efficiency at scale.</p></div>
+      <div class="seg-card"><h3>Complex / Multi-Layer PCBA</h3><p>Higher layer counts, tighter tolerances, and controlled-impedance routing. Greater engineering complexity and DFM involvement.</p></div>
+      <div class="seg-card"><h3>Optical &amp; Sensor-Integrated PCBA</h3><p>Boards integrated with optical, laser, or sensor components. Highest engineering complexity, lower volume, tightly controlled process.</p></div>
+      <div class="seg-card"><h3>Cable &amp; Harness Assembly</h3><p>Wiring harnesses and cable assemblies supporting board-level systems. Hand-assembly, mixed connector types, and system integration testing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">
+      <div class="eyebrow">Selection Criteria</div>
+      <h2>What Suppliers Were Evaluated Against</h2>
+    </div>
+    <div class="crit-row"><div class="name">Manufacturing Capability &amp; Capacity</div><div class="desc">SMT line capability, DFM support, and available capacity across board complexity tiers.</div><div class="imp high">High</div></div>
+    <div class="crit-row"><div class="name">Flexibility / Agility</div><div class="desc">Speed to adjust as NPI programs ramp and requirements evolve.</div><div class="imp high">High</div></div>
+    <div class="crit-row"><div class="name">Engineering &amp; DFM Support</div><div class="desc">Dedicated design-for-manufacturability and NPI engineering resources.</div><div class="imp high">High</div></div>
+    <div class="crit-row"><div class="name">Quality Control &amp; IPC Standards</div><div class="desc">IPC-A-610 class certification and rigorous first-pass yield, particularly where suppliers subcontract processes.</div><div class="imp high">High</div></div>
+    <div class="crit-row"><div class="name">Supply Chain &amp; Component Sourcing</div><div class="desc">Visibility into how suppliers manage component allocation, lead time, and their own subcontractor base.</div><div class="imp med">Medium</div></div>
+    <div class="crit-row"><div class="name">Contingency Plans</div><div class="desc">How component-shortage and single-source risk is identified and managed.</div><div class="imp med">Medium</div></div>
+    <div class="crit-row"><div class="name">Pricing Transparency</div><div class="desc">Competitiveness and transparency of cost structure, including BOM cost pass-through.</div><div class="imp high">High</div></div>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="section-label on-navy">
+      <div class="eyebrow">Competitive RFP</div>
+      <h2>19 Suppliers, Scored Across 9 Weighted Dimensions</h2>
+      <p>Every supplier was scored on price, alternative fee models, company overview, facilities, risk mitigation, business continuity, and value add. Seven finalists advanced to on-site facility audits and a 13-point capability comparison.</p>
+    </div>
+    <div class="dist-wrap">
+      <div class="dist-bar">
+        <div class="dist-seg dist-leading" style="width:21%;">4 Leading</div>
+        <div class="dist-seg dist-competitive" style="width:53%;">10 Competitive</div>
+        <div class="dist-seg dist-lagging" style="width:26%;">5 Lagging</div>
+      </div>
+      <div class="dist-legend">
+        <div><span class="dot" style="background:var(--gold);"></span>Leading (30+ / 40 pts)</div>
+        <div><span class="dot" style="background:var(--gold-light);"></span>Competitive (25&ndash;30 pts)</div>
+        <div><span class="dot" style="background:rgba(253,250,245,0.25);"></span>Lagging (&lt;25 pts)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">
+      <div class="eyebrow">Award Scenario Modeling</div>
+      <h2>Four Ways to Award the Business &mdash; Modeled Before Choosing</h2>
+      <p>Rather than negotiating supplier-by-supplier, the full category was modeled under four consolidation strategies to see the real trade-off between savings and supplier concentration risk.</p>
+    </div>
+    <div class="scenario-grid">
+      <div class="scenario-col">
+        <div class="scenario-bar-wrap"><div class="scenario-bar" style="height:28%;"><div class="pct">8.9%</div></div></div>
+        <div class="scenario-name">No Change</div>
+        <div class="scenario-desc">Re-quote incumbent EMS partners, same suppliers</div>
+      </div>
+      <div class="scenario-col">
+        <div class="scenario-bar-wrap"><div class="scenario-bar" style="height:67%;"><div class="pct">30.5%</div></div></div>
+        <div class="scenario-name">Transition Internally</div>
+        <div class="scenario-desc">Shift volume among existing EMS relationships</div>
+      </div>
+      <div class="scenario-col">
+        <div class="scenario-bar-wrap"><div class="scenario-bar" style="height:100%;"><div class="pct">45.5%</div></div></div>
+        <div class="scenario-name">Lowest Quote</div>
+        <div class="scenario-desc">Award purely on lowest bid</div>
+      </div>
+      <div class="scenario-col">
+        <div class="scenario-bar-wrap"><div class="scenario-bar" style="height:89%;"><div class="pct">40.6%</div></div></div>
+        <div class="scenario-name">New Suppliers</div>
+        <div class="scenario-desc">Re-allocated by category capability fit</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="section-label on-navy">
+      <div class="eyebrow">Recommendation</div>
+      <h2>A Tiered Strategy, Not the Lowest Bid</h2>
+      <p>The pure lowest-price scenario carried the highest supplier-concentration risk. The recommendation instead balanced savings against capability fit and continuity of supply.</p>
+    </div>
+    <div class="tier-grid">
+      <div class="tier-card">
+        <h3>Tier 1 &amp; 2 &mdash; Strategic / Preferred (70&ndash;100% of volume)</h3>
+        <div class="tier-item"><div class="tname">Complex &amp; Multi-Layer PCBA Partner</div><div class="tmeta">Strategy: Grow</div><div class="trat">Strong existing partnership with proven quality and capacity.</div></div>
+        <div class="tier-item"><div class="tname">Global EMS Partner (Multi-Site)</div><div class="tmeta">Strategy: Implement &rarr; Grow</div><div class="trat">Strong domestic capability plus global network, supporting international expansion.</div></div>
+        <div class="tier-item"><div class="tname">Optical / Sensor Integration Specialist</div><div class="tmeta">Strategy: Implement &rarr; Grow</div><div class="trat">Strong technical and engineering capability, with backup capacity in standard boards.</div></div>
+      </div>
+      <div class="tier-card">
+        <h3>Tier 3 &mdash; Approved / Planned Exit</h3>
+        <div class="tier-item"><div class="tname">Three Legacy EMS Incumbents</div><div class="tmeta">Strategy: Maintain &rarr; Decline / Exit</div><div class="trat">Retained short-term for continuity across standard boards, cable assemblies, and legacy programs; phased exit as Tier 1/2 volume ramps.</div></div>
+        <div class="tier-item"><div class="tname">Transition Safeguard</div><div class="tmeta">3-month safety stock built into exit planning</div><div class="trat">Existing contracts included 30-day termination for convenience, giving a clean off-ramp.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">
+      <div class="eyebrow">Transition Plan</div>
+      <h2>Phased Rollout Over 12 Months</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-col">
+        <h3>Short Term (0&ndash;4 mo)</h3>
+        <ul>
+          <li>Finalize Tier 1/2/3 supplier designations</li>
+          <li>Select top-savings board families to transition first, by sub-category</li>
+          <li>Maintain Tier 2/3 base throughout transition</li>
+        </ul>
+      </div>
+      <div class="tl-col">
+        <h3>Mid Term (4&ndash;8 mo)</h3>
+        <ul>
+          <li>Evaluate new Tier 1 supplier process and execution</li>
+          <li>Confirm product quality against standard</li>
+          <li>Set remaining 2018 volume allocation by sub-category</li>
+        </ul>
+      </div>
+      <div class="tl-col">
+        <h3>Long Term (8&ndash;12 mo)</h3>
+        <ul>
+          <li>Exit Tier 3 suppliers per transition safeguard</li>
+          <li>Full implementation of Tier 1/2 by sub-category</li>
+          <li>Evaluate performance ahead of next-year volume allocation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="section-label on-navy">
+      <div class="eyebrow">Should-Cost Benchmarking</div>
+      <h2>Negotiated Result vs. Industry Cost Structure</h2>
+      <p>A should-cost model built from industry reports and supplier data gave a benchmark for what the category's cost structure should look like &mdash; used as leverage in negotiation, not just a check after the fact.</p>
+    </div>
+    <div class="cost-chart">
+      <div class="cost-col"><div class="cost-bars">
+        <div class="cost-bar industry" style="height:96%;"><div class="v">48</div></div>
+        <div class="cost-bar rfp" style="height:83%;"><div class="v">41</div></div>
+      </div><div class="cost-label">Component / BOM Cost</div></div>
+      <div class="cost-col"><div class="cost-bars">
+        <div class="cost-bar industry" style="height:16%;"><div class="v">8</div></div>
+        <div class="cost-bar rfp" style="height:12%;"><div class="v">6</div></div>
+      </div><div class="cost-label">Bare PCB Fabrication</div></div>
+      <div class="cost-col"><div class="cost-bars">
+        <div class="cost-bar industry" style="height:42%;"><div class="v">21</div></div>
+        <div class="cost-bar rfp" style="height:40%;"><div class="v">20</div></div>
+      </div><div class="cost-label">SMT &amp; Assembly Labor</div></div>
+      <div class="cost-col"><div class="cost-bars">
+        <div class="cost-bar industry" style="height:26%;"><div class="v">13</div></div>
+        <div class="cost-bar rfp" style="height:17%;"><div class="v">8</div></div>
+      </div><div class="cost-label">Overhead</div></div>
+      <div class="cost-col"><div class="cost-bars">
+        <div class="cost-bar industry" style="height:20%;"><div class="v">10</div></div>
+        <div class="cost-bar rfp" style="height:13%;"><div class="v">7</div></div>
+      </div><div class="cost-label">SG&amp;A</div></div>
+      <div class="cost-col"><div class="cost-bars">
+        <div class="cost-bar industry" style="height:40%;"><div class="v">20</div></div>
+        <div class="cost-bar rfp" style="height:11%;"><div class="v">5</div></div>
+      </div><div class="cost-label">Profit Margin</div></div>
+    </div>
+    <div class="cost-legend">
+      <div><span class="dot" style="background:rgba(253,250,245,0.3);"></span>Industry Benchmark (%)</div>
+      <div><span class="dot" style="background:var(--gold);"></span>Negotiated Result (%)</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">
+      <div class="eyebrow">Impact</div>
+      <h2>What the Process Delivered</h2>
+    </div>
+    <div class="impact-grid">
+      <div class="impact-card"><div class="num">First-Ever</div><div class="label">Competitive bid conducted for this category</div></div>
+      <div class="impact-card"><div class="num">19 → 7 → 3</div><div class="label">Suppliers bid, shortlisted, and awarded strategic status</div></div>
+      <div class="impact-card"><div class="num">10&ndash;45%</div><div class="label">Savings range identified across scenarios</div></div>
+      <div class="impact-card"><div class="num">12 mo</div><div class="label">Phased transition with built-in continuity safeguards</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <footer>
+    <div class="wrap">
+      <div>Case study illustrates real strategic sourcing methodology, adapted to a representative technical category. Company and supplier identities generalized for confidentiality.</div>
+      <div style="margin-top:14px;"><a href="index.html">← Back to Valerie Bagala's Portfolio</a></div>
+    </div>
+  </footer>
+</section>
+
+</body>
+</html>
