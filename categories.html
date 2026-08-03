@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Materials &amp; Categories Sourced | Valerie Bagala</title>
+<meta name="description" content="Valerie Bagala — full breakdown of material categories, commodity groups, and technology domains sourced across Medical Devices, Cosmetics/OTC, and Energy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0D1B2A;
+    --navy-2:#132538;
+    --gold:#B89A5A;
+    --gold-light:#D8C08A;
+    --cream:#F5F0E8;
+    --cream-2:#FDFAF5;
+    --text-dark:#0D1B2A;
+    --text-muted:#5B6572;
+    --text-on-navy:#FDFAF5;
+    --text-on-navy-muted:#AEB8C4;
+    --border-navy:rgba(253,250,245,0.10);
+    --border-cream:rgba(13,27,42,0.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Montserrat',"Helvetica Neue",Arial,sans-serif;
+    background:var(--cream);
+    color:var(--text-dark);
+    line-height:1.6;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 32px;}
+  .eyebrow{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+  h1,h2,h3{font-weight:800;letter-spacing:-0.5px;}
+
+  /* Header */
+  header{
+    background:var(--cream-2);
+    border-bottom:1px solid var(--border-cream);
+    position:sticky;top:0;z-index:50;
+  }
+  header .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:20px;padding-bottom:20px;
+  }
+  .logo{font-size:20px;font-weight:800;letter-spacing:0.5px;color:var(--navy);}
+  .logo span{color:var(--gold);}
+  nav{display:flex;gap:36px;}
+  nav a{
+    font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--navy);opacity:0.75;transition:opacity .15s;
+  }
+  nav a:hover{opacity:1;}
+
+  /* Hero */
+  .hero{
+    background:var(--navy);
+    color:var(--text-on-navy);
+    padding:80px 0 64px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 85% 20%, rgba(184,154,90,0.12), transparent 55%);
+    pointer-events:none;
+  }
+  .hero .wrap{position:relative;}
+  .hero h1{
+    font-size:42px;line-height:1.12;margin:18px 0 20px;color:var(--text-on-navy);
+    max-width:780px;
+  }
+  .hero h1 .accent{color:var(--gold);}
+  .hero p.lead{
+    max-width:700px;font-size:16px;color:var(--text-on-navy-muted);margin-bottom:30px;
+  }
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:15px 26px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+    border-radius:2px;transition:all .15s;
+  }
+  .btn-gold{background:var(--gold);color:var(--navy);}
+  .btn-gold:hover{background:var(--gold-light);}
+  .btn-outline{border:1px solid rgba(253,250,245,0.35);color:var(--text-on-navy);}
+  .btn-outline:hover{border-color:var(--gold);color:var(--gold-light);}
+
+  /* Section generic */
+  section{padding:72px 0;}
+  .section-divider{border-top:1px solid var(--border-cream);}
+  .section-label{text-align:left;margin-bottom:16px;}
+  .section-label h2{font-size:28px;color:var(--navy);margin-top:8px;}
+  .section-sub{color:var(--text-muted);font-size:13.5px;margin-bottom:38px;}
+  .section-sub .dates{color:var(--gold);font-weight:700;}
+
+  .domain-intro{max-width:760px;color:var(--text-muted);font-size:14.5px;margin-bottom:36px;line-height:1.75;}
+
+  .cat-group{margin-bottom:30px;}
+  .cat-group h3{font-size:12.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+  .pill-wrap{display:flex;flex-wrap:wrap;gap:8px;}
+  .pill{
+    font-size:12px;padding:7px 13px;background:var(--cream-2);border:1px solid var(--border-cream);
+    border-radius:20px;color:var(--navy);
+  }
+
+  .subhead{font-size:15px;font-weight:700;color:var(--navy);margin:34px 0 18px;padding-top:6px;border-top:1px dashed var(--border-cream);}
+  .subhead:first-of-type{border-top:none;padding-top:0;}
+
+  /* Classification grid (reused box style) */
+  .class-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px;}
+  .class-box{background:var(--cream-2);border:1px solid var(--border-cream);padding:20px 18px;}
+  .class-box h4{font-size:13.5px;color:var(--navy);margin-bottom:6px;font-weight:700;}
+  .class-box p{font-size:12px;color:var(--text-muted);line-height:1.5;}
+
+  /* Cross-reference table */
+  .matrix-wrap{overflow-x:auto;margin-top:12px;}
+  .matrix-table{width:100%;border-collapse:collapse;font-size:13px;min-width:640px;}
+  .matrix-table th{
+    text-align:left;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);
+    padding:10px 14px;border-bottom:1px solid var(--border-cream);
+  }
+  .matrix-table td{padding:13px 14px;border-bottom:1px solid var(--border-cream);color:var(--text-muted);}
+  .matrix-table td:first-child{color:var(--navy);font-weight:700;}
+
+  /* Footer */
+  footer{background:var(--navy);color:var(--text-on-navy-muted);padding:44px 0;text-align:center;font-size:12.5px;border-top:1px solid var(--border-navy);}
+  footer .footer-name{color:var(--text-on-navy);font-weight:700;margin-bottom:8px;font-size:14px;}
+  footer a:hover{color:var(--gold-light);}
+
+  @media(max-width:760px){
+    .hero h1{font-size:30px;}
+    .class-grid{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo"><a href="index.html">VALERIE <span>BAGALA</span></a></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#medtech">MedTech</a>
+      <a href="#cosmetics">Cosmetics</a>
+      <a href="#energy">Energy</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Materials &amp; Categories Sourced</div>
+    <h1>Every Category I've Owned<br><span class="accent">Across MedTech, Cosmetics &amp; Energy</span></h1>
+    <p class="lead">A full breakdown of the commodity categories, material types, and technology domains I've sourced across my career &mdash; organized by industry so it's easy to see exactly where my experience applies. Company- and vendor-specific product identifiers have been generalized to protect proprietary supplier relationships; the category structure and scope are accurate.</p>
+    <div class="btn-row">
+      <a href="index.html" class="btn btn-outline">&larr; Back to Resume</a>
+    </div>
+  </div>
+</section>
+
+<section id="medtech">
+  <div class="wrap">
+    <div class="section-label">
+      <div class="eyebrow">Medical Devices &amp; Optical Systems</div>
+      <h2>Precision Component &amp; Regulated Materials Sourcing</h2>
+    </div>
+    <div class="section-sub">Carl Zeiss Meditec &middot; <span class="dates">2022 &ndash; Present</span></div>
+    <p class="domain-intro">Managed the Approved Supplier List (ASL) and bill-of-materials sourcing scope for ophthalmic diagnostic and surgical systems &mdash; spanning precision assemblies, electronics, optics/photonics, mechanical fabrication, and the regulatory/services layer that supports them.</p>
+
+    <div class="subhead">Main Commodity Categories</div>
+
+    <div class="cat-group">
+      <h3>Assemblies</h3>
+      <div class="pill-wrap">
+        <span class="pill">Electromechanical Assemblies</span>
+        <span class="pill">Mechanical Assemblies</span>
+        <span class="pill">Optomechanical Assemblies</span>
+      </div>
+    </div>
+
+    <div class="cat-group">
+      <h3>Electronics</h3>
+      <div class="pill-wrap">
+        <span class="pill">Printed Circuit Board Assemblies (PCBA)</span>
+        <span class="pill">Cables, Wire Harnesses &amp; Connectors</span>
+        <span class="pill">Motors (Stepper, Drive, Optic Motors)</span>
+        <span class="pill">Power Supplies, Output Modules &amp; Transformers</span>
+        <span class="pill">Lasers &amp; Laser Diodes</span>
+        <span class="pill">Electronic Catalogue Parts</span>
+      </div>
+    </div>
+
+    <div class="cat-group">
+      <h3>Mechanics</h3>
+      <div class="pill-wrap">
+        <span class="pill">Sheet Metal (Enclosures, Frames, Covers, Brackets)</span>
+        <span class="pill">Machined Parts</span>
+        <span class="pill">Metal Castings</span>
+      </div>
+    </div>
+
+    <div class="cat-group">
+      <h3>Optics &amp; Photonics</h3>
+      <div class="pill-wrap">
+        <span class="pill">Round Optics &amp; Plano Optics (Lenses, Prisms, Mirrors, Aspherics, Coatings)</span>
+        <span class="pill">Optical Cubes, Beam Splitters &amp; Filters</span>
+      </div>
+    </div>
+
+    <div class="cat-group">
+      <h3>Injection Molding &amp; Plastics</h3>
+      <div class="pill-wrap">
+        <span class="pill">Injection Molded Plastic Components</span>
+        <span class="pill">Injection Molding / Casting Hybrids</span>
+        <span class="pill">3D Printed Plastics</span>
+      </div>
+    </div>
+
+    <div class="cat-group">
+      <h3>Visualization</h3>
+      <div class="pill-wrap">
+        <span class="pill">Cameras &amp; CCD Video Camera Systems</span>
+      </div>
+    </div>
+
+    <div class="cat-group">
+      <h3>Norm / Catalogue Parts (Hardware)</h3>
+      <div class="pill-wrap">
+        <span class="pill">Fasteners (Screws, Washers, Nuts, Pins, Rivets)</span>
+        <span class="pill">Bearings &amp; Linear Guides</span>
+        <span class="pill">Standard Hardware &amp; Mechanical Accessories</span>
+      </div>
+    </div>
+
+    <div class="cat-group">
+      <h3>Raw Materials &amp; Consumables</h3>
+      <div class="pill-wrap">
+        <span class="pill">Ceramic Blanks</span>
+        <span class="pill">Buttons, Knobs &amp; Covers</span>
+        <span class="pill">Gaskets &amp; Seals</span>
+      </div>
+    </div>
+
+    <div class="cat-group">
+      <h3>Packaging &amp; Printing</h3>
+      <div class="pill-wrap">
+        <span class="pill">Corrugated Shipping Boxes &amp; Foam Inserts</span>
+        <span class="pill">Product Labels &amp; Packaging Inserts / Manuals</span>
+      </div>
+    </div>
+
+    <div class="cat-group">
+      <h3>Production Equipment &amp; Tooling</h3>
+      <div class="pill-wrap">
+        <span class="pill">Test Equipment &amp; Calibration Fixtures</span>
+        <span class="pill">Manufacturing Tools &amp; Tooling</span>
+      </div>
+    </div>
+
+    <div class="cat-group">
+      <h3>Sterile Goods</h3>
+      <div class="pill-wrap">
+        <span class="pill">Sterile Medical Consumables &amp; Disposable Goods</span>
+      </div>
+    </div>
+
+    <div class="cat-group">
+      <h3>Services &amp; Non-Production Support (NPM)</h3>
+      <div class="pill-wrap">
+        <span class="pill">Software / Firmware Development</span>
+        <span class="pill">Technical Services &amp; Equipment Calibration</span>
+        <span class="pill">Regulatory Affairs (RA), Clinical Affairs (CA) &amp; QA Consulting</span>
+        <span class="pill">Logistics, Storage &amp; Warehousing</span>
+        <span class="pill">Technical Translation Services</span>
+      </div>
+    </div>
+
+    <div class="subhead">Material Types &amp; Engineering Consumables</div>
+    <div class="cat-group">
+      <h3>Adhesives, Sealants &amp; Chemical Solvents</h3>
+      <div class="pill-wrap">
+        <span class="pill">Quick-Cure Epoxies</span>
+        <span class="pill">Threadlockers</span>
+        <span class="pill">RTV Silicones</span>
+        <span class="pill">Rubber &amp; Gasket Sealants</span>
+        <span class="pill">Solvents &amp; Primers</span>
+      </div>
+    </div>
+    <div class="cat-group">
+      <h3>Thermal, Lighting &amp; Computing Components</h3>
+      <div class="pill-wrap">
+        <span class="pill">Cooling Fans &amp; Heat Sinks</span>
+        <span class="pill">Projector &amp; Illumination Lamps</span>
+        <span class="pill">LED Modules &amp; Fiber Optic Connectors</span>
+        <span class="pill">Motherboards, Memory &amp; Storage (SSD/HDD)</span>
+        <span class="pill">Network Switches &amp; Display Hardware</span>
+      </div>
+    </div>
+
+    <div class="subhead">Product Sourcing Classifications</div>
+    <div class="class-grid">
+      <div class="class-box">
+        <h4>Custom</h4>
+        <p>Tailored engineering designs, custom PCBAs, and custom metal fabrications.</p>
+      </div>
+      <div class="class-box">
+        <h4>OTS (Off-The-Shelf)</h4>
+        <p>Standard commercial catalogue components and electrical/mechanical hardware.</p>
+      </div>
+      <div class="class-box">
+        <h4>Consumables &amp; Tools</h4>
+        <p>Replacement spares, maintenance materials, and specialized tooling.</p>
+      </div>
+      <div class="class-box">
+        <h4>Services &amp; Software</h4>
+        <p>Third-party calibration, software development, testing, and consulting services.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cosmetics" class="section-divider">
+  <div class="wrap">
+    <div class="section-label">
+      <div class="eyebrow">Cosmetic, OTC &amp; Beauty Raw Materials</div>
+      <h2>Formulation Ingredient &amp; Active Sourcing</h2>
+    </div>
+    <div class="section-sub">Rodan &amp; Fields &middot; <span class="dates">2018 &ndash; 2021</span></div>
+    <p class="domain-intro">Sourced the full raw-material scope behind OTC drug actives and skincare formulations &mdash; from regulated active ingredients through functional bioactives, botanicals, emulsifiers, and effect pigments &mdash; across a multi-tier global supplier network.</p>
+
+    <div class="subhead">Active Pharmaceutical &amp; OTC Ingredients</div>
+    <div class="cat-group">
+      <h3>Sunscreen Actives (Organic &amp; Inorganic)</h3>
+      <div class="pill-wrap">
+        <span class="pill">Zinc Oxide</span>
+        <span class="pill">Titanium Dioxide</span>
+        <span class="pill">Avobenzone</span>
+        <span class="pill">Homosalate</span>
+        <span class="pill">Octisalate</span>
+        <span class="pill">Octocrylene</span>
+        <span class="pill">Octinoxate</span>
+      </div>
+    </div>
+    <div class="cat-group">
+      <h3>Acne &amp; Exfoliating Actives</h3>
+      <div class="pill-wrap">
+        <span class="pill">Benzoyl Peroxide</span>
+        <span class="pill">Salicylic Acid (BHA)</span>
+        <span class="pill">Sulfur (Precipitated Powder USP)</span>
+      </div>
+    </div>
+    <div class="cat-group">
+      <h3>Skin Protectants &amp; Depigmenting Actives</h3>
+      <div class="pill-wrap">
+        <span class="pill">Hydroquinone</span>
+        <span class="pill">Allantoin USP</span>
+        <span class="pill">Dimethicone</span>
+      </div>
+    </div>
+
+    <div class="subhead">Functional Ingredient Categories</div>
+    <div class="cat-group">
+      <h3>Peptides, Anti-Aging &amp; Bioactives</h3>
+      <div class="pill-wrap">
+        <span class="pill">Signal Peptides &amp; Collagen Boosters</span>
+        <span class="pill">Firming &amp; Pore-Refining Actives</span>
+        <span class="pill">Skin Complexion &amp; Anti-Wrinkle Bioactives</span>
+      </div>
+    </div>
+    <div class="cat-group">
+      <h3>Skin Barrier, Ceramides &amp; Lipids</h3>
+      <div class="pill-wrap">
+        <span class="pill">Ceramides &amp; Barrier Repair Complexes</span>
+        <span class="pill">Cholesterol &amp; Emollient Esters</span>
+        <span class="pill">Lecithins &amp; Phospholipids</span>
+      </div>
+    </div>
+    <div class="cat-group">
+      <h3>Botanical Extracts &amp; Ferments</h3>
+      <div class="pill-wrap">
+        <span class="pill">Anti-Inflammatory &amp; Soothing Extracts</span>
+        <span class="pill">Specialty Extracts &amp; Fermented Actives</span>
+      </div>
+    </div>
+    <div class="cat-group">
+      <h3>Antioxidants &amp; Vitamins</h3>
+      <div class="pill-wrap">
+        <span class="pill">Vitamin E, C &amp; B5 Derivatives</span>
+        <span class="pill">Biotin</span>
+        <span class="pill">Skin Brightening Agents</span>
+      </div>
+    </div>
+    <div class="cat-group">
+      <h3>Emulsifiers, Surfactants &amp; Rheology Modifiers</h3>
+      <div class="pill-wrap">
+        <span class="pill">Emulsifying Systems</span>
+        <span class="pill">Surfactants &amp; Betaines</span>
+        <span class="pill">Gelling Polymers &amp; Thickeners</span>
+      </div>
+    </div>
+    <div class="cat-group">
+      <h3>Silicones, Solvents &amp; Delivery Systems</h3>
+      <div class="pill-wrap">
+        <span class="pill">Silicones &amp; Siloxanes</span>
+        <span class="pill">Humectants &amp; Glycols</span>
+        <span class="pill">Encapsulation &amp; Delivery Particles</span>
+      </div>
+    </div>
+    <div class="cat-group">
+      <h3>Pigments, Colorants &amp; Effect Pearls</h3>
+      <div class="pill-wrap">
+        <span class="pill">Mica &amp; Interference Pearls</span>
+        <span class="pill">Iron Oxides &amp; Color-Correcting Pigments</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="energy" class="section-divider">
+  <div class="wrap">
+    <div class="section-label">
+      <div class="eyebrow">Energy, Catalysts &amp; Industrial Procurement</div>
+      <h2>Refining, Chemicals &amp; Utilities Contracting</h2>
+    </div>
+    <div class="section-sub">Shell Oil Products &middot; <span class="dates">2013 &ndash; 2018</span></div>
+    <p class="domain-intro">Managed a $450M contract portfolio spanning refinery process catalysts, bulk and specialty chemicals, industrial gases, energy utilities, and the logistics network that keeps a downstream manufacturing site running.</p>
+
+    <div class="cat-group">
+      <h3>Catalysts &amp; Catalyst Services</h3>
+      <div class="pill-wrap">
+        <span class="pill">Fluid Catalytic Cracking (FCC) Catalysts &amp; Additives</span>
+        <span class="pill">Refinery Hydrotreating Catalysts</span>
+        <span class="pill">Hydrogen Manufacturing Unit (HMU) Catalysts</span>
+        <span class="pill">Petrochemical Process Catalysts (Ethylene / Aromatics)</span>
+        <span class="pill">Specialty &amp; Ligand Catalysts</span>
+        <span class="pill">Catalyst Handling &amp; Recycling Services</span>
+      </div>
+    </div>
+
+    <div class="cat-group">
+      <h3>Purchased Chemicals &amp; Industrial Additives</h3>
+      <div class="pill-wrap">
+        <span class="pill">Bulk &amp; Commodity Chemicals (Caustic Soda, Sulfuric Acid, Hydrofluoric Acid)</span>
+        <span class="pill">Process &amp; Water Treatment Chemicals</span>
+        <span class="pill">Specialty Chemicals &amp; Metals</span>
+        <span class="pill">Adsorbents &amp; Absorbents (Activated Carbon)</span>
+        <span class="pill">Laboratory Chemicals &amp; Supplies</span>
+      </div>
+    </div>
+
+    <div class="cat-group">
+      <h3>Industrial Gases</h3>
+      <div class="pill-wrap">
+        <span class="pill">Bulk Hydrogen, Nitrogen &amp; Oxygen (Pipeline/Bulk)</span>
+        <span class="pill">Specialty &amp; Calibration Cylinder Gases</span>
+      </div>
+    </div>
+
+    <div class="cat-group">
+      <h3>Energy &amp; Utilities</h3>
+      <div class="pill-wrap">
+        <span class="pill">Electrical Energy Supply &amp; Scheduling</span>
+        <span class="pill">Industrial Natural Gas Supply</span>
+        <span class="pill">High-Pressure Steam Utilities</span>
+        <span class="pill">Raw Water &amp; Municipal Utility Infrastructure</span>
+      </div>
+    </div>
+
+    <div class="cat-group">
+      <h3>Metals &amp; Structural Materials</h3>
+      <div class="pill-wrap">
+        <span class="pill">Structural Steel &amp; Industrial Metal Stock</span>
+      </div>
+    </div>
+
+    <div class="cat-group">
+      <h3>Logistics, Transportation &amp; Freight</h3>
+      <div class="pill-wrap">
+        <span class="pill">Bulk Liquid &amp; Heavy Haul Road Freight</span>
+        <span class="pill">Rail Logistics &amp; Infrastructure Maintenance</span>
+        <span class="pill">Ocean &amp; Air Freight Forwarding</span>
+      </div>
+    </div>
+
+    <div class="cat-group">
+      <h3>Engineering &amp; Maintenance Services</h3>
+      <div class="pill-wrap">
+        <span class="pill">Refinery &amp; Process Maintenance</span>
+        <span class="pill">Equipment Servicing &amp; Plant Process Support</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="crossref" class="section-divider">
+  <div class="wrap">
+    <div class="section-label">
+      <div class="eyebrow">Quick Reference</div>
+      <h2>Category Group &times; Company &times; Years</h2>
+    </div>
+    <div class="matrix-wrap">
+      <table class="matrix-table">
+        <thead>
+          <tr><th>Category Group</th><th>Company</th><th>Years</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Assemblies &amp; Precision Components</td><td>Carl Zeiss Meditec</td><td>2022 &ndash; Present</td></tr>
+          <tr><td>Electronics &amp; PCBA</td><td>Carl Zeiss Meditec</td><td>2022 &ndash; Present</td></tr>
+          <tr><td>Optics &amp; Photonics</td><td>Carl Zeiss Meditec</td><td>2022 &ndash; Present</td></tr>
+          <tr><td>Sterile &amp; Regulated Medical Goods</td><td>Carl Zeiss Meditec</td><td>2022 &ndash; Present</td></tr>
+          <tr><td>Active/OTC &amp; Cosmetic Ingredients</td><td>Rodan &amp; Fields</td><td>2018 &ndash; 2021</td></tr>
+          <tr><td>Functional Formulation Ingredients</td><td>Rodan &amp; Fields</td><td>2018 &ndash; 2021</td></tr>
+          <tr><td>Process Catalysts</td><td>Shell Oil Products</td><td>2013 &ndash; 2018</td></tr>
+          <tr><td>Industrial Chemicals &amp; Gases</td><td>Shell Oil Products</td><td>2013 &ndash; 2018</td></tr>
+          <tr><td>Energy &amp; Utilities Contracts</td><td>Shell Oil Products</td><td>2013 &ndash; 2018</td></tr>
+          <tr><td>Logistics &amp; Freight</td><td>Shell Oil Products</td><td>2013 &ndash; 2018</td></tr>
+          <tr><td>Pharmaceutical &amp; Medical Consumables</td><td>Sutter East Bay Hospitals</td><td>2007 &ndash; 2013</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-name">Valerie Bagala</div>
+    <div><a href="mailto:VRBagala@gmail.com">VRBagala@gmail.com</a> &nbsp;&middot;&nbsp; 415-740-5874 &nbsp;&middot;&nbsp; Mountain House, CA</div>
+    <div style="margin-top:14px;"><a href="index.html">&larr; Back to Resume &amp; Portfolio</a></div>
+    <div style="margin-top:14px;opacity:0.7;">&copy; 2026 Valerie Bagala.</div>
+  </div>
+</footer>
+
+</body>
+</html>
