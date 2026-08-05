@@ -219,8 +219,14 @@
   .matrix-table td:first-child{color:var(--text-on-navy);font-weight:700;}
 
   .stage-map-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
-  .stage-map-card{background:var(--navy-2);border:1px solid var(--border-navy);padding:22px 18px;transition:border-color .15s;}
+  .stage-map-card{background:var(--navy-2);border:1px solid var(--border-navy);padding:22px 18px;transition:border-color .15s;position:relative;}
   .stage-map-card:hover{border-color:var(--gold);}
+  .stage-map-card.current-role{border:1.5px solid var(--gold);}
+  .stage-map-card.current-role .current-role-badge{
+    position:absolute;top:-10px;right:14px;background:var(--gold);color:var(--navy);
+    font-size:8.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;
+    padding:3px 8px;border-radius:2px;
+  }
   .stage-map-card h4{
     font-size:15px;color:var(--gold);font-weight:800;letter-spacing:0.3px;margin-bottom:16px;
     padding-bottom:12px;border-bottom:1px solid var(--border-navy);
@@ -536,13 +542,15 @@
       <h3 style="color:var(--text-on-navy);font-size:18px;margin-bottom:4px;">Lifecycle Stage Mapping</h3>
       <p class="phase-sub">How the eight sourcing steps below roll up into the five material lifecycle stages.</p>
       <div class="stage-map-grid">
-        <div class="stage-map-card">
+        <div class="stage-map-card current-role">
+          <span class="current-role-badge">Current Role</span>
           <h4>NPD</h4>
           <div class="field"><div class="field-label">Primary Focus</div><div class="field-value">Technology, DFM, supplier selection &amp; qualification</div></div>
           <div class="field"><div class="field-label">Sourcing Steps</div><div class="field-value">Steps 1&ndash;2</div></div>
           <div class="field"><div class="field-label">Key Gate Deliverable</div><div class="field-value">Approved sourcing strategy &amp; concept sign-off</div></div>
         </div>
-        <div class="stage-map-card">
+        <div class="stage-map-card current-role">
+          <span class="current-role-badge">Current Role</span>
           <h4>NPI</h4>
           <div class="field"><div class="field-label">Primary Focus</div><div class="field-value">Contracting, PPAP, ramp readiness</div></div>
           <div class="field"><div class="field-label">Sourcing Steps</div><div class="field-value">Steps 3&ndash;4</div></div>
@@ -567,6 +575,9 @@
           <div class="field"><div class="field-label">Key Gate Deliverable</div><div class="field-value">LTB execution &amp; tooling disposition</div></div>
         </div>
       </div>
+      <p class="phase-sub" style="margin-top:16px;margin-bottom:0;">
+        <strong style="color:var(--gold-light);">Current Role</strong> marks NPD/NPI, which is the sourcing scope of my present role at Carl Zeiss Meditec. The remaining stages &mdash; Production, LCM, and LCE/EOL &mdash; reflect full-lifecycle ownership I've held in prior roles across Shell, Rodan &amp; Fields, and Sutter Health; I've operated across the entire framework, just not all five stages within one role at once.
+      </p>
     </div>
 
     <div class="phase-block">
