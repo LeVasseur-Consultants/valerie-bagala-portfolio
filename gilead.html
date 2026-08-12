@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Category Management Partnership for Gilead &mdash; Valerie Bagala</title>
+<meta name="description" content="Prepared for Gilead Sciences &mdash; a working perspective on category management and strategic sourcing, from Valerie Bagala, Strategic Sourcing &amp; Category Management Leader.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<style>
+:root{
+--navy:#0D1B2A;
+--navy-2:#132538;
+--gold:#B89A5A;
+--gold-light:#D8C08A;
+--cream:#F5F0E8;
+--cream-2:#FDFAF5;
+--text-dark:#0D1B2A;
+--text-muted:#5B6572;
+--text-on-navy:#FDFAF5;
+--text-on-navy-muted:#AEB8C4;
+--border-navy:rgba(253,250,245,0.10);
+--border-cream:rgba(13,27,42,0.10);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+font-family:'Montserrat',"Helvetica Neue",Arial,sans-serif;
+background:var(--cream);
+color:var(--text-dark);
+line-height:1.6;
+}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);}
+h1,h2,h3{font-weight:800;letter-spacing:-0.3px;}
+section{padding:64px 0;}
+
+.topbar{background:var(--cream-2);border-bottom:1px solid var(--border-cream);padding:18px 0;}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;}
+.topbar .brand{font-size:15px;font-weight:800;color:var(--navy);}
+.topbar .brand span{color:var(--gold);}
+.topbar .tag{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);opacity:0.6;}
+.topbar .back{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);opacity:0.6;}
+.topbar .back:hover{opacity:1;}
+
+.hero{background:var(--navy);color:var(--text-on-navy);padding:84px 0 60px;}
+.hero h1{font-size:40px;line-height:1.14;margin:16px 0 20px;max-width:780px;}
+.hero p.lead{max-width:680px;font-size:16.5px;color:var(--text-on-navy-muted);margin-bottom:34px;}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border-navy);border:1px solid var(--border-navy);max-width:920px;}
+.stat{background:var(--navy-2);padding:20px 18px;}
+.stat .num{font-size:24px;font-weight:800;color:var(--gold-light);}
+.stat .label{font-size:11px;color:var(--text-on-navy-muted);text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
+
+.section-label{margin-bottom:38px;}
+.section-label h2{font-size:28px;color:var(--navy);margin-top:8px;}
+.section-label.on-navy h2{color:var(--text-on-navy);}
+.section-label p{color:var(--text-muted);max-width:680px;font-size:14.5px;margin-top:10px;}
+.section-label.on-navy p{color:var(--text-on-navy-muted);}
+
+.lead-block{max-width:760px;font-size:14.5px;color:var(--text-muted);margin-bottom:28px;}
+.lead-block.on-navy{color:var(--text-on-navy-muted);}
+.lead-block strong{color:var(--navy);}
+.lead-block.on-navy strong{color:var(--text-on-navy);}
+
+.cf-table{width:100%;border-collapse:collapse;}
+.cf-table th{text-align:left;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);padding:10px 14px;border-bottom:2px solid var(--border-cream);}
+.cf-table td{padding:14px;font-size:13.5px;border-bottom:1px solid var(--border-cream);vertical-align:top;}
+.cf-table td.dim{font-weight:700;color:var(--navy);width:20%;}
+.cf-table td.scope{color:var(--text-muted);width:34%;}
+.cf-table td.fit{color:#2c6b4f;width:46%;}
+.cf-table td.fit.gap{color:#7a4a3a;}
+
+.tabs-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;}
+.tab-btn{background:var(--cream-2);border:1px solid var(--border-cream);color:var(--text-muted);font-family:inherit;font-size:12px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;padding:11px 16px;cursor:pointer;transition:all .15s;}
+.tab-btn:hover{border-color:var(--gold);color:var(--navy);}
+.tab-btn.active{background:var(--navy);border-color:var(--navy);color:var(--text-on-navy);}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+.detail-table{width:100%;border-collapse:collapse;background:var(--cream-2);border:1px solid var(--border-cream);}
+.detail-table td{padding:14px 16px;font-size:13.5px;border-bottom:1px solid var(--border-cream);vertical-align:top;}
+.detail-table tr:last-child td{border-bottom:none;}
+.detail-table td.label{font-weight:700;color:var(--navy);width:22%;white-space:nowrap;}
+.detail-table td.val{color:var(--text-muted);width:78%;}
+.compare-note{font-size:12px;color:var(--text-muted);margin-top:14px;font-style:italic;}
+
+.seg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.seg-card{background:var(--cream-2);border:1px solid var(--border-cream);padding:22px;}
+.seg-card h3{font-size:14.5px;color:var(--navy);margin-bottom:10px;}
+.seg-card p{font-size:13px;color:var(--text-muted);}
+
+.crit-row{display:grid;grid-template-columns:230px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid var(--border-navy);align-items:start;}
+.crit-row .name{font-weight:700;font-size:13.5px;color:var(--text-on-navy);}
+.crit-row .desc{font-size:13px;color:var(--text-on-navy-muted);}
+
+.impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.impact-card{background:var(--navy-2);border:1px solid var(--border-navy);padding:24px;text-align:left;}
+.impact-card .num{font-size:26px;font-weight:800;color:var(--gold-light);}
+.impact-card .label{font-size:12.5px;color:var(--text-on-navy-muted);margin-top:8px;}
+
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+.tl-col{background:var(--cream-2);border:1px solid var(--border-cream);padding:16px 14px;text-align:center;}
+.tl-col .yr{font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
+.tl-col .co{font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.tl-col .ind{font-size:11.5px;color:var(--text-muted);}
+.tl-col.next{background:var(--navy);border-color:var(--gold);}
+.tl-col.next .co{color:var(--text-on-navy);}
+.tl-col.next .ind{color:var(--gold-light);}
+
+.quote-block{border-left:2px solid var(--gold);padding:4px 0 4px 24px;margin:8px 0 0;max-width:700px;}
+.quote-block p{font-size:15px;font-style:italic;color:var(--text-on-navy);line-height:1.7;}
+.quote-block .attr{font-size:12px;color:var(--text-on-navy-muted);margin-top:10px;font-style:normal;}
+
+.closing{background:var(--navy);color:var(--text-on-navy);padding:64px 0;}
+.closing h2{font-size:26px;color:var(--text-on-navy);margin-bottom:18px;max-width:720px;}
+.closing p{font-size:15px;color:var(--text-on-navy-muted);max-width:680px;margin-bottom:10px;}
+.closing .sign{margin-top:26px;font-size:14px;color:var(--gold-light);font-weight:700;}
+
+footer{background:var(--cream-2);color:var(--text-muted);padding:32px 0;text-align:center;font-size:12px;border-top:1px solid var(--border-cream);}
+
+@media(max-width:860px){
+.stat-row{grid-template-columns:repeat(2,1fr);}
+.seg-grid{grid-template-columns:1fr;}
+.crit-row{grid-template-columns:1fr;gap:6px;}
+.impact-grid{grid-template-columns:1fr;}
+.timeline{grid-template-columns:repeat(2,1fr);}
+.detail-table td.label{width:auto;white-space:normal;}
+}
+</style>
+
+<section>
+<div class="topbar">
+<div class="wrap">
+<div class="brand">VALERIE <span>BAGALA</span></div>
+<div style="display:flex;align-items:center;gap:22px;">
+<a class="back" href="https://www.send.co/a/TBsmV6vc" target="_blank" rel="noopener noreferrer">View Sourcing Toolkit &rarr;</a>
+<a class="back" href="index.html#resume">View Full Resume &rarr;</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="hero">
+<div class="wrap">
+<div class="eyebrow">Prepared For &middot; Gilead Sciences</div>
+<h1>Category Management Built Around One Instinct: Make Governance the Thing That Moves Business Faster</h1>
+<p class="lead">Twenty years of strategic sourcing and category management spanning regulated healthcare, cGMP-adjacent skincare, energy, and medical technology &mdash; applied here to what Gilead's Category Management function needs: spend governance, supplier consolidation, cross-functional partnership, and a repeatable framework wherever one doesn't exist yet.</p>
+<div class="stat-row">
+<div class="stat"><div class="num">20+ Yrs</div><div class="label">Strategic Sourcing &amp; Category Management</div></div>
+<div class="stat"><div class="num">cGMP</div><div class="label">Regulated Pharma, Biotech &amp; MedTech Experience</div></div>
+<div class="stat"><div class="num">$450M</div><div class="label">Contract Portfolio Owned, Shell</div></div>
+<div class="stat"><div class="num">8-Stage</div><div class="label">Supplier Qualification Framework, Zeiss</div></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="section-label">
+<div class="eyebrow">Why Gilead</div>
+<h2>Mission-Driven, Regulated, and Scaling Fast &mdash; the Environment I've Spent a Career Inside Of</h2>
+</div>
+<div class="lead-block">
+The pull isn't "return to pharma" as a category &mdash; it's more specific than that: Gilead is investing aggressively right now, committing over $11B into new oncology and inflammation platforms through the Arcellx, Tubulis, and Ouro Medicines acquisitions, while its core HIV and Commercial business just posted its strongest second-quarter growth in three years. That's exactly the kind of environment where a Category Management function either becomes the thing that lets the business move fast, or the thing that slows it down. I've spent my career building the former.
+</div>
+<div class="lead-block">
+<strong>A belief that shapes how I'd approach this role specifically:</strong> spend governance only works when it's built as infrastructure, not policy. A procurement-involvement threshold only earns real compliance when the person enforcing it can show their work in dollars and risk, not just cite a rule. That's the muscle I've built repeatedly &mdash; most recently owning requisition-to-payment governance for Carl Zeiss Meditec's full indirect spend base, and before that architecting an 8-stage supplier qualification framework with no existing playbook to follow.
+</div>
+<div class="lead-block">
+<strong>On the 12-month engagement format:</strong> every framework on this page &mdash; the 8-stage supplier qualification model, the broker-market program, the Source-to-Pay governance buildout &mdash; was built inside a defined window, not as an open-ended mandate. A scoped engagement isn't a mismatch with how I work; it's closer to the format I've delivered in most often.
+</div>
+<div class="lead-block">
+<strong>How I work with people, not just process:</strong> I'm extremely independent, but I'm also a true team player &mdash; I genuinely want to help the people around me, because I know our success is intrinsically linked to the company's bottom line, and I never lose sight of that. I'm a passionate optimist, even in the face of adversity, and I bring that energy into how I work. I'd describe myself as a blend of old-school, foundational experience and forward-thinking practice &mdash; always looking for ways to leverage technology to cut down decision and change time, and to make things better, easier, and more efficient.
+</div>
+</div>
+</section>
+
+<section class="hero">
+<div class="wrap">
+<div class="section-label on-navy">
+<div class="eyebrow">Scope &amp; Readiness</div>
+<h2>What Category Management Would Actually Cover</h2>
+<p>Mapped honestly against what this role needs &mdash; strong direct overlap in most areas, one real gap named plainly rather than talked around.</p>
+</div>
+<div class="crit-row"><div class="name">Category Strategy &amp; Supplier Consolidation</div><div class="desc">Direct, current overlap &mdash; built the broker-market qualification framework and an 8-stage supplier qualification model at Carl Zeiss Meditec that consolidated a fragmented, high-risk supplier base into a structured, still-active program.</div></div>
+<div class="crit-row"><div class="name">Spend Governance &amp; Procurement-Involvement Thresholds</div><div class="desc">Direct overlap &mdash; own Source-to-Pay execution and requisition-to-payment governance for Zeiss's full indirect / Non-Production Materials spend base, the same triage function this role owns for assigned categories.</div></div>
+<div class="crit-row"><div class="name">Regulated / cGMP Category Management</div><div class="desc">A specific strength &mdash; directed cGMP facility qualification and supplier audits for raw material and API suppliers at Rodan &amp; Fields, and lead corporate and regulatory audits as primary procurement authority at Zeiss today.</div></div>
+<div class="crit-row"><div class="name">Cross-Functional &amp; Legal Partnership</div><div class="desc">Direct overlap &mdash; lead joint Legal-Procurement RFP and contract negotiations for SOWs and MSAs at Zeiss, including a compliance and clinical research services agreement.</div></div>
+<div class="crit-row"><div class="name">Spend Analytics, RFx &amp; Supplier Benchmarking</div><div class="desc">Direct overlap &mdash; should-cost models and market intelligence on every RFx at Shell; built a demand-forecasting and spend-analytics system integrating SAP, COPTIS, and sourcing platforms at Rodan &amp; Fields.</div></div>
+<div class="crit-row"><div class="name">Commercial / Marketing &amp; Agency Category Sourcing</div><div class="desc">Real ramp required &mdash; category composition for this role isn't fully scoped to me yet, and Gilead's Commercial Procurement portfolio can include agency and marketing-services categories where my depth is thinner. My background is technical and regulated &mdash; engineering, raw materials/API, energy &mdash; not creative or agency procurement. The RFx, governance, and consolidation methodology transfers regardless of the category assigned; the category-specific market knowledge would be new.</div></div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="section-label">
+<div class="eyebrow">Regulatory Fluency</div>
+<h2>Same Rulebook, Not Just a Similar One</h2>
+<p>Gilead operates under FDA, GxP, and global pharma regulatory frameworks &mdash; not an adjacent industry's rulebook I'd need to translate, but the one I've worked inside for most of my career.</p>
+</div>
+<table class="cf-table">
+<tr><th>Requirement</th><th>Gilead's Likely Standard</th><th>What I Navigate Today</th></tr>
+<tr><td class="dim">cGMP / GxP Compliance</td><td class="scope">Category and supplier decisions need to hold up under GxP and FDA scrutiny across Commercial, Medical, and clinical-adjacent spend.</td><td class="fit">Directed cGMP facility qualification and supplier audits for raw material and API suppliers, Rodan &amp; Fields; lead corporate and regulatory audits as primary procurement authority, Carl Zeiss Meditec.</td></tr>
+<tr><td class="dim">Regulatory Traceability</td><td class="scope">Supplier and spend decisions need to be defensible under audit, especially for anything touching regulated product or clinical support.</td><td class="fit">Architected the broker-market qualification framework specifically to source outside standard channels without breaking regulatory traceability, Carl Zeiss Meditec.</td></tr>
+<tr><td class="dim">Clinical / GxP Contracting</td><td class="scope">Contracts touching clinical research, medical affairs, or compliance functions carry additional regulatory and legal review requirements.</td><td class="fit">Led a joint Legal-Procurement RFP and negotiation for a compliance and clinical research services agreement, right-sizing scope to mitigate downstream risk, Carl Zeiss Meditec.</td></tr>
+<tr><td class="dim">Multi-Jurisdiction / Global Governance</td><td class="scope">Category strategy spans a global, matrixed organization with regional nuance across Commercial, Public Affairs, and Medical Affairs.</td><td class="fit">Served as the governance bridge between Germany Global Procurement and U.S. business units, standardizing processes and driving cross-functional global alignment, Carl Zeiss Meditec.</td></tr>
+<tr><td class="dim">Licensing &amp; Controlled Substances</td><td class="scope">Pharma-adjacent supply chains often carry DEA and state pharmaceutical licensing requirements.</td><td class="fit">Tracked DEA and California state pharmaceutical licensing for clinical staff; ensured FDA/OSHA compliance across procured materials, Sutter East Bay Hospitals.</td></tr>
+</table>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="section-label">
+<div class="eyebrow">Track Record</div>
+<h2>Built From Scratch, Built to Last</h2>
+</div>
+<div class="seg-grid">
+<div class="seg-card"><h3>8-Stage Supplier Qualification Framework</h3><p>Architected during the 2022 global microchip shortage alongside a broker-market qualification model, minimizing supply risk while preserving audit defensibility, Carl Zeiss Meditec.</p></div>
+<div class="seg-card"><h3>Joint Legal-Procurement Contracting</h3><p>Led RFP and contract negotiations for SOWs and MSAs, including a compliance and clinical research services agreement, right-sizing scope to mitigate downstream cost and change-order risk.</p></div>
+<div class="seg-card"><h3>Full Sourcing Lifecycle, $450M Portfolio</h3><p>Owned RFI through RFP, RFQ, and direct negotiation across chemical, lubricant, logistics, energy, and HSSE categories at Shell &mdash; delivering $20M in annual savings.</p></div>
+<div class="seg-card"><h3>cGMP Facility &amp; API Supplier Qualification</h3><p>Directed cGMP facility qualification and supplier audits for raw material suppliers supporting regulated formulation manufacturing, partnering directly with lab scientists and formulation chemists, Rodan &amp; Fields.</p></div>
+</div>
+</div>
+</section>
+
+<section class="hero">
+<div class="wrap">
+<div class="section-label on-navy">
+<div class="eyebrow">A Real Example</div>
+<h2>What Indecision Actually Costs</h2>
+<p>An end-of-life component needed a $100K bridge buy to carry production through a redesign. Approval stalled &mdash; not for technical or budget reasons, but because no one wanted to own the decision. The need never went away, so the outcome was forced anyway: a broker-market buy at $500K.</p>
+</div>
+<div class="impact-grid">
+<div class="impact-card"><div class="num">$100K</div><div class="label">The fix that was available, and needed, from the start</div></div>
+<div class="impact-card"><div class="num">$500K</div><div class="label">What it actually cost once forced by delay</div></div>
+<div class="impact-card"><div class="num">$400K</div><div class="label">Paid entirely for indecision, not for the component itself</div></div>
+</div>
+<div class="quote-block">
+<p>The need was never in question. The only thing that changed while we waited was the price. That's the gap I try to close &mdash; not by moving faster than is responsible, but by making sure a correct call doesn't sit unmade.</p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="section-label">
+<div class="eyebrow">Pattern, Not Promise</div>
+<h2>Five Industries, Same Instinct</h2>
+<p>Adapting into a new category or environment isn't a hope for the next engagement &mdash; it's what has happened at every step of this one so far.</p>
+</div>
+<div class="timeline">
+<div class="tl-col"><div class="yr">2007&ndash;2013</div><div class="co">Sutter Health</div><div class="ind">Healthcare &middot; Tactical Purchasing</div></div>
+<div class="tl-col"><div class="yr">2013&ndash;2018</div><div class="co">Shell</div><div class="ind">Energy &middot; Contract Management</div></div>
+<div class="tl-col"><div class="yr">2018&ndash;2021</div><div class="co">Rodan &amp; Fields</div><div class="ind">Skincare &middot; cGMP Raw Materials</div></div>
+<div class="tl-col"><div class="yr">2022&ndash;Present</div><div class="co">Carl Zeiss Meditec</div><div class="ind">MedTech &middot; PCBA &amp; Optical</div></div>
+<div class="tl-col next"><div class="yr">Next</div><div class="co">Gilead Sciences</div><div class="ind">Biopharma &middot; Category Mgmt (12-Mo)</div></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="section-label">
+<div class="eyebrow">Corporate Context</div>
+<h2>Comparative Scale &amp; Governance, Company by Company</h2>
+<p>A closer look at the operating scale and regulatory environment behind each stop on that timeline &mdash; the same comparative lens I'd bring to sizing up Gilead.</p>
+</div>
+<div class="tabs-nav">
+<button class="tab-btn" data-tab="sutter" type="button">Sutter Health &middot; Alta Bates Summit</button>
+<button class="tab-btn" data-tab="shell" type="button">Shell &middot; Martinez Refinery</button>
+<button class="tab-btn" data-tab="rf" type="button">Rodan + Fields</button>
+<button class="tab-btn" data-tab="zeiss" type="button">Carl Zeiss Meditec</button>
+<button class="tab-btn active" data-tab="gilead" type="button">Gilead Sciences</button>
+</div>
+<div class="tab-panel" id="tab-sutter">
+<table class="detail-table">
+<tr><td class="label">Industry</td><td class="val">Non-profit, multi-campus acute care hospital system &mdash; part of the Sutter Health integrated healthcare network.</td></tr>
+<tr><td class="label">Scale</td><td class="val">Alta Bates Summit Medical Center spans three campuses (Alta Bates &amp; Herrick in Berkeley, Summit in Oakland) with 1,000+ licensed beds, formed in 1999 through the merger of five hospitals; parent Sutter Health is a ~$16B+ annual revenue not-for-profit system.</td></tr>
+<tr><td class="label">Headcount</td><td class="val">~4,000 employees and 1,000+ active physicians at Alta Bates Summit Medical Center; Sutter Health system-wide employs roughly 57,000&ndash;64,000 people.</td></tr>
+<tr><td class="label">Regulatory Bodies</td><td class="val">The Joint Commission (accreditation), CMS (Medicare/Medicaid Conditions of Participation), California Department of Public Health &amp; HCAI (licensing, financial disclosure), DEA &amp; California State Board of Pharmacy (controlled-substance and pharmaceutical licensing), FDA (medical supplies &amp; pharmaceuticals), HIPAA/OCR (patient health information privacy), OSHA/Cal-OSHA.</td></tr>
+</table>
+</div>
+<div class="tab-panel" id="tab-shell">
+<table class="detail-table">
+<tr><td class="label">Industry</td><td class="val">Petroleum refining, downstream fuel &amp; chemical processing, and marine terminal operations.</td></tr>
+<tr><td class="label">Scale</td><td class="val">Site: ~165,000 bpd refining capacity (2016) turning crude into gasoline, diesel, jet fuel, and asphalt &mdash; an estimated $5&ndash;6B in annual product revenue at that throughput; the plant itself (a separate asset-sale figure, not revenue) sold in 2020 for $1.2B.<br>US entity: Shell USA (formerly Shell Oil Company, the entity behind Shell Oil Products US) reported approximately $37B in annual revenue.<br>Global parent: Royal Dutch Shell plc posted $233.6B in revenue for full-year 2016.</td></tr>
+<tr><td class="label">Headcount</td><td class="val">Site: ~700 direct Shell FTEs (2016) plus 1,000+ local union contractors &mdash; turnaround specialists, maintenance technicians, pipefitters, electricians.<br>Global parent: Shell plc employed approximately 85,000 people worldwide as of end of 2025 (down from ~96,000 in 2024).</td></tr>
+<tr><td class="label">Regulatory Bodies</td><td class="val">TSA (site security, IT/OT cybersecurity), USCG/MTSA (marine terminal access, TWIC), EPA Region 9 &amp; BAAQMD (Title V air, RCRA, RMP), OSHA/Cal-OSHA (Process Safety Management), PHMSA &amp; FERC (pipeline safety), CARB &amp; Regional Water Boards (clean fuel standards, discharge permits).</td></tr>
+</table>
+</div>
+<div class="tab-panel" id="tab-rf">
+<table class="detail-table">
+<tr><td class="label">Industry</td><td class="val">Cosmetics, premium skincare, and multi-level marketing / direct selling.</td></tr>
+<tr><td class="label">Scale</td><td class="val">~$1.6B&ndash;$1.7B annual net revenue at 2018 peak, reaching a $4B enterprise valuation following TPG Capital's investment.</td></tr>
+<tr><td class="label">Headcount</td><td class="val">~700&ndash;1,000 corporate FTEs (2018) plus roughly 411,000 active independent consultants.</td></tr>
+<tr><td class="label">Regulatory Bodies</td><td class="val">FDA (cosmetic safety, OTC active ingredients, GMP), FTC (advertising claims, income disclosure), State Attorneys General (consumer protection, MLM regulation), OEHHA/Prop 65 (chemical warning labels).</td></tr>
+</table>
+</div>
+<div class="tab-panel" id="tab-zeiss">
+<table class="detail-table">
+<tr><td class="label">Industry</td><td class="val">Medical devices &mdash; ophthalmic and neurosurgical equipment.</td></tr>
+<tr><td class="label">Scale</td><td class="val">Meditec subsidiary: ~&euro;2.23B (~$2.4B USD) annual revenue; Ophthalmology ~75&ndash;80% of business, Microsurgery ~20&ndash;25%.<br>Global parent: the ZEISS Group posted just under &euro;11B in FY2023/24 and almost &euro;12B in FY2024/25, across four segments &mdash; Semiconductor Manufacturing Technology, Industrial Quality &amp; Research, Medical Technology, and Consumer Markets &mdash; active in ~50 countries.</td></tr>
+<tr><td class="label">Headcount</td><td class="val">Meditec subsidiary: ~5,780 direct FTEs &mdash; ~4,280 non-sales (Production ~2,545, R&amp;D ~1,157, Admin ~578) and ~1,504 in sales &amp; service, including ~690 field service technicians.<br>Global parent: the ZEISS Group employs over 46,600 people worldwide.</td></tr>
+<tr><td class="label">Regulatory Bodies</td><td class="val">FDA/CDRH (510(k), PMA, Quality System Regulations), EU MDR / Notified Bodies (CE marking), NMPA (China) / PMDA (Japan) / Health Canada (global registration, post-market surveillance), HHS-OIG &amp; AdvaMed Code (healthcare professional interaction standards), HIPAA/OCR (protected health information handled by or connected through diagnostic devices and service data).</td></tr>
+</table>
+</div>
+<div class="tab-panel active" id="tab-gilead">
+<table class="detail-table">
+<tr><td class="label">Industry</td><td class="val">Biopharmaceutical &mdash; HIV, viral hepatitis, oncology, and inflammation therapeutics.</td></tr>
+<tr><td class="label">Scale</td><td class="val">FY2025 revenue of $29.4B; Q2 2026 base business sales up 10% year-over-year (strongest second-quarter growth in three years), with HIV sales up 12% and quarterly PrEP sales surpassing $1B for the first time. Operates in 35+ countries. Recently acquired Arcellx (~$6.4B), Tubulis (~$3.2B), and Ouro Medicines (~$1.9B) to expand into cell therapy and antibody-drug conjugate platforms.</td></tr>
+<tr><td class="label">Headcount</td><td class="val">~17,000 employees worldwide; headquartered in Foster City, California.</td></tr>
+<tr><td class="label">Regulatory Bodies</td><td class="val">FDA (drug approval, GxP/cGMP manufacturing oversight), EMA (Europe), PMDA (Japan), DEA (controlled-substance handling), SEC (NASDAQ-listed public company reporting), OFAC and export-compliance frameworks for global commercial operations.</td></tr>
+</table>
+</div>
+<table class="cf-table" style="margin-top:32px;table-layout:fixed;">
+<colgroup>
+<col style="width:15%;">
+<col style="width:13%;">
+<col style="width:22%;">
+<col style="width:16%;">
+<col style="width:34%;">
+</colgroup>
+<tr><th>Company</th><th>Core Industry</th><th>Scale / Revenue</th><th>Headcount</th><th>Primary Regulators</th></tr>
+<tr><td class="dim">Sutter Health &middot; Alta Bates Summit</td><td class="scope">Acute Care Healthcare</td><td class="scope">1,000+ beds &middot; ~$16B+ system revenue</td><td class="scope">~4,000 (+64k system-wide)</td><td class="scope">Joint Commission, CMS, CDPH/HCAI, DEA, FDA, HIPAA/OCR</td></tr>
+<tr><td class="dim">Shell &middot; Martinez Refinery</td><td class="scope">Refining &amp; Downstream</td><td class="scope">165k bpd site (~$6B est.) &middot; $37B US &middot; $233.6B global</td><td class="scope">~700 site (+1,000 contractors) &middot; ~85k global</td><td class="scope">TSA, USCG, EPA, OSHA/Cal-OSHA, PHMSA</td></tr>
+<tr><td class="dim">Rodan + Fields</td><td class="scope">Cosmetics &amp; Skincare</td><td class="scope">~$1.7B revenue (peak)</td><td class="scope">~700&ndash;1,000 corporate (+411k reps)</td><td class="scope">FDA, FTC, State AGs, OEHHA</td></tr>
+<tr><td class="dim">Carl Zeiss Meditec</td><td class="scope">Medical Devices &amp; Tech</td><td class="scope">&euro;2.23B Meditec &middot; ~&euro;12B ZEISS Group global</td><td class="scope">~5,780 Meditec (+46,600 global)</td><td class="scope">FDA (CDRH), EU MDR, NMPA, PMDA, HIPAA/OCR</td></tr>
+<tr><td class="dim">Gilead Sciences</td><td class="scope">Biopharmaceutical (HIV, Oncology, Inflammation)</td><td class="scope">$29.4B FY2025 revenue &middot; 35+ countries</td><td class="scope">~17,000 global</td><td class="scope">FDA, EMA, PMDA, DEA, SEC</td></tr>
+</table>
+<div class="compare-note">Gilead figures reflect FY2025 annual results and Q2 2026 earnings disclosures; other companies reflect prior tenure-era or current public figures as noted. Not verified against internal, non-public data.</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="section-label">
+<div class="eyebrow">How I'd Approach It</div>
+<h2>A 12-Month Engagement, Built to Leave Something Behind</h2>
+<p>Every framework on this page was built inside a defined window, not an open-ended mandate &mdash; this is that same approach applied to a scoped, 12-month engagement.</p>
+</div>
+<div class="seg-grid" style="grid-template-columns:repeat(3,1fr);">
+<div class="seg-card"><h3>Months 1&ndash;2 &middot; Learn the Real Spend Base</h3><p>Map what's actually being spent today across the assigned category, who owns which supplier relationships, and where governance is inconsistent. Meet with Legal, Finance, Security, and business stakeholders to find what's urgent and where the procurement-involvement threshold is being bypassed.</p></div>
+<div class="seg-card"><h3>Months 3&ndash;8 &middot; Execute the Core Mandate</h3><p>Run the RFx and consolidation opportunities that deliver the fastest, most defensible value &mdash; the same should-cost and supplier-qualification discipline behind the Zeiss and Shell work above &mdash; while standing up the tiering, intake, and performance tracking the category needs.</p></div>
+<div class="seg-card"><h3>Months 9&ndash;12 &middot; Hand Off Something Repeatable</h3><p>Formalize what worked into a documented playbook &mdash; the same instinct behind the 8-stage supplier qualification framework and the Zeiss S2P governance model &mdash; so the category strategy outlives the engagement, whether or not it converts to a permanent seat.</p></div>
+</div>
+</div>
+</section>
+
+<section class="closing">
+<div class="wrap">
+<div class="eyebrow" style="color:var(--gold);">Closing Note</div>
+<h2>I'm a dog with a bone about the things I believe are worth proving.</h2>
+<p>When I can show a case is a definitive benefit, I chip away until it's actually adopted &mdash; not just proposed. That's the habit behind every framework and workflow above, and it's the habit I'd bring to this engagement at Gilead: understand the process, prove the case, see it through.</p>
+<div class="sign">Valerie Bagala &middot; Strategic Sourcing &amp; Category Management Leader</div>
+</div>
+</section>
+
+<footer>
+<div class="wrap">Prepared for Gilead Sciences &middot; Figures and examples generalized for confidentiality where noted.</div>
+</footer>
+
+<script>
+document.querySelectorAll('.tab-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var tab = btn.getAttribute('data-tab');
+    document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+    document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById('tab-' + tab).classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
+
