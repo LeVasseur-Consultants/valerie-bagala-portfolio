@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supplier Strategy Program Management for Meta &mdash; Valerie Bagala</title>
+<meta name="description" content="Prepared for Meta &mdash; a working perspective on supplier strategy program management for FacOps, from Valerie Bagala, Strategic Sourcing Partner.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<style>
+:root{
+--navy:#0D1B2A;
+--navy-2:#132538;
+--gold:#B89A5A;
+--gold-light:#D8C08A;
+--cream:#F5F0E8;
+--cream-2:#FDFAF5;
+--text-dark:#0D1B2A;
+--text-muted:#5B6572;
+--text-on-navy:#FDFAF5;
+--text-on-navy-muted:#AEB8C4;
+--border-navy:rgba(253,250,245,0.10);
+--border-cream:rgba(13,27,42,0.10);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+font-family:'Montserrat',"Helvetica Neue",Arial,sans-serif;
+background:var(--cream);
+color:var(--text-dark);
+line-height:1.6;
+}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);}
+h1,h2,h3{font-weight:800;letter-spacing:-0.3px;}
+section{padding:64px 0;}
+
+.topbar{background:var(--cream-2);border-bottom:1px solid var(--border-cream);padding:18px 0;}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;}
+.topbar .brand{font-size:15px;font-weight:800;color:var(--navy);}
+.topbar .brand span{color:var(--gold);}
+.topbar .tag{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);opacity:0.6;}
+.topbar .back{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);opacity:0.6;}
+.topbar .back:hover{opacity:1;}
+
+.hero{background:var(--navy);color:var(--text-on-navy);padding:84px 0 60px;}
+.hero h1{font-size:40px;line-height:1.14;margin:16px 0 20px;max-width:780px;}
+.hero p.lead{max-width:680px;font-size:16.5px;color:var(--text-on-navy-muted);margin-bottom:34px;}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border-navy);border:1px solid var(--border-navy);max-width:920px;}
+.stat{background:var(--navy-2);padding:20px 18px;}
+.stat .num{font-size:24px;font-weight:800;color:var(--gold-light);}
+.stat .label{font-size:11px;color:var(--text-on-navy-muted);text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
+
+.section-label{margin-bottom:38px;}
+.section-label h2{font-size:28px;color:var(--navy);margin-top:8px;}
+.section-label.on-navy h2{color:var(--text-on-navy);}
+.section-label p{color:var(--text-muted);max-width:680px;font-size:14.5px;margin-top:10px;}
+.section-label.on-navy p{color:var(--text-on-navy-muted);}
+
+.lead-block{max-width:760px;font-size:14.5px;color:var(--text-muted);margin-bottom:28px;}
+.lead-block.on-navy{color:var(--text-on-navy-muted);}
+.lead-block strong{color:var(--navy);}
+.lead-block.on-navy strong{color:var(--text-on-navy);}
+
+.cf-table{width:100%;border-collapse:collapse;}
+.cf-table th{text-align:left;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);padding:10px 14px;border-bottom:2px solid var(--border-cream);}
+.cf-table td{padding:14px;font-size:13.5px;border-bottom:1px solid var(--border-cream);vertical-align:top;}
+.cf-table td.dim{font-weight:700;color:var(--navy);width:20%;}
+.cf-table td.scope{color:var(--text-muted);width:34%;}
+.cf-table td.fit{color:#2c6b4f;width:46%;}
+.cf-table td.fit.gap{color:#7a4a3a;}
+
+.tabs-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;}
+.tab-btn{background:var(--cream-2);border:1px solid var(--border-cream);color:var(--text-muted);font-family:inherit;font-size:12px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;padding:11px 16px;cursor:pointer;transition:all .15s;}
+.tab-btn:hover{border-color:var(--gold);color:var(--navy);}
+.tab-btn.active{background:var(--navy);border-color:var(--navy);color:var(--text-on-navy);}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+.detail-table{width:100%;border-collapse:collapse;background:var(--cream-2);border:1px solid var(--border-cream);}
+.detail-table td{padding:14px 16px;font-size:13.5px;border-bottom:1px solid var(--border-cream);vertical-align:top;}
+.detail-table tr:last-child td{border-bottom:none;}
+.detail-table td.label{font-weight:700;color:var(--navy);width:22%;white-space:nowrap;}
+.detail-table td.val{color:var(--text-muted);width:78%;}
+.compare-note{font-size:12px;color:var(--text-muted);margin-top:14px;font-style:italic;}
+
+.seg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.seg-card{background:var(--cream-2);border:1px solid var(--border-cream);padding:22px;}
+.seg-card h3{font-size:14.5px;color:var(--navy);margin-bottom:10px;}
+.seg-card p{font-size:13px;color:var(--text-muted);}
+
+.crit-row{display:grid;grid-template-columns:230px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid var(--border-navy);align-items:start;}
+.crit-row .name{font-weight:700;font-size:13.5px;color:var(--text-on-navy);}
+.crit-row .desc{font-size:13px;color:var(--text-on-navy-muted);}
+
+.impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.impact-card{background:var(--navy-2);border:1px solid var(--border-navy);padding:24px;text-align:left;}
+.impact-card .num{font-size:26px;font-weight:800;color:var(--gold-light);}
+.impact-card .label{font-size:12.5px;color:var(--text-on-navy-muted);margin-top:8px;}
+
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+.tl-col{background:var(--cream-2);border:1px solid var(--border-cream);padding:16px 14px;text-align:center;}
+.tl-col .yr{font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
+.tl-col .co{font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.tl-col .ind{font-size:11.5px;color:var(--text-muted);}
+.tl-col.next{background:var(--navy);border-color:var(--gold);}
+.tl-col.next .co{color:var(--text-on-navy);}
+.tl-col.next .ind{color:var(--gold-light);}
+
+.quote-block{border-left:2px solid var(--gold);padding:4px 0 4px 24px;margin:8px 0 0;max-width:700px;}
+.quote-block p{font-size:15px;font-style:italic;color:var(--text-on-navy);line-height:1.7;}
+.quote-block .attr{font-size:12px;color:var(--text-on-navy-muted);margin-top:10px;font-style:normal;}
+
+.closing{background:var(--navy);color:var(--text-on-navy);padding:64px 0;}
+.closing h2{font-size:26px;color:var(--text-on-navy);margin-bottom:18px;max-width:720px;}
+.closing p{font-size:15px;color:var(--text-on-navy-muted);max-width:680px;margin-bottom:10px;}
+.closing .sign{margin-top:26px;font-size:14px;color:var(--gold-light);font-weight:700;}
+
+footer{background:var(--cream-2);color:var(--text-muted);padding:32px 0;text-align:center;font-size:12px;border-top:1px solid var(--border-cream);}
+
+@media(max-width:860px){
+.stat-row{grid-template-columns:repeat(2,1fr);}
+.seg-grid{grid-template-columns:1fr;}
+.crit-row{grid-template-columns:1fr;gap:6px;}
+.impact-grid{grid-template-columns:1fr;}
+.timeline{grid-template-columns:repeat(2,1fr);}
+.detail-table td.label{width:auto;white-space:normal;}
+}
+</style>
+
+<section>
+<div class="topbar">
+<div class="wrap">
+<div class="brand">VALERIE <span>BAGALA</span></div>
+<div style="display:flex;align-items:center;gap:22px;">
+<a class="back" href="https://www.send.co/a/TBsmV6vc" target="_blank" rel="noopener noreferrer">View Sourcing Toolkit &rarr;</a>
+<a class="back" href="index.html#resume">View Full Resume &rarr;</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="hero">
+<div class="wrap">
+<div class="eyebrow">Prepared For &middot; Meta</div>
+<h1>Supplier Strategy Built Around One Instinct: Make the Program the Thing That Scales, Not the Bottleneck</h1>
+<p class="lead">Twenty years of strategic sourcing and category management spanning regulated healthcare, cGMP-adjacent skincare, energy, and medical technology &mdash; applied here to what the FacOps Business Operations Excellence (BOE) team needs: supplier lifecycle governance, Purchase Request to Purchase Order process ownership, business review and audit discipline, and a program built to run consistently across a centrally governed, fleetwide footprint.</p>
+<div class="stat-row">
+<div class="stat"><div class="num">20+ Yrs</div><div class="label">Strategic Sourcing &amp; Category Management</div></div>
+<div class="stat"><div class="num">PR-to-PO</div><div class="label">SAP RtP Process Expert, Shell</div></div>
+<div class="stat"><div class="num">100 Pages &rarr; 1 Workflow</div><div class="label">Manual Process Automated, Zeiss</div></div>
+<div class="stat"><div class="num">$450M</div><div class="label">Contract Portfolio Owned, Shell</div></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="section-label">
+<div class="eyebrow">Why Meta</div>
+<h2>Infrastructure Is the Foundation &mdash; the Program Is What Keeps It Standing</h2>
+</div>
+<div class="lead-block">
+The pull isn't "big tech" as a category &mdash; it's more specific than that: data centers are infrastructure in the most literal sense, and a supplier strategy program for that footprint either becomes the thing that lets Facility Operations move fast and stay accountable, or the thing that slows it down. That's the same instinct that's shaped my career &mdash; building the governance layer other teams depend on rather than sitting downstream of it, and treating a supplier program as something that should make site teams faster, not just keep them supplied.
+</div>
+<div class="lead-block">
+<strong>A belief that shapes how I'd approach this role specifically:</strong> a supplier strategy program only works when it's built as infrastructure, not policy &mdash; a standard someone can run without me in the room, backed by a process people actually use because it's faster than the workaround. That's the muscle I've built repeatedly: owning the requisition-to-purchase-order process end to end, and converting a 100-page manual governance process into a single automated global workflow with no mandate to do it, just because the gap was there.
+</div>
+<div class="lead-block">
+<strong>How I work with people, not just process:</strong> I'm extremely independent, but I'm also a true team player &mdash; I genuinely want to help the people around me, because I know our success is intrinsically linked to the company's bottom line, and I never lose sight of that. I'm a passionate optimist, even in the face of adversity, and I bring that energy into how I work. I'd describe myself as a blend of old-school, foundational experience and forward-thinking practice &mdash; always looking for ways to leverage technology to cut down decision and change time, and to make things better, easier, and more efficient.
+</div>
+</div>
+</section>
+
+<section class="hero">
+<div class="wrap">
+<div class="section-label on-navy">
+<div class="eyebrow">Scope &amp; Readiness</div>
+<h2>What the Supplier Strategy Program Would Actually Cover</h2>
+<p>Mapped point-by-point against the actual job description &mdash; strong direct overlap in most areas, one honest gap stated plainly rather than bridged.</p>
+</div>
+<div class="crit-row"><div class="name">Supplier Lifecycle &amp; Category Management</div><div class="desc">Direct overlap &mdash; authored and executed multi-year category sourcing roadmaps at Rodan &amp; Fields, and own full-cycle supplier qualification, contracting, and performance management at Carl Zeiss Meditec today.</div></div>
+<div class="crit-row"><div class="name">Business Review Framework &amp; Audits</div><div class="desc">Direct overlap &mdash; led Business Performance Reviews (BPRs) and KPI tracking at Shell to hold suppliers accountable to cost, quality, delivery, and compliance; serve as lead point of contact during corporate and regulatory audits at Zeiss.</div></div>
+<div class="crit-row"><div class="name">Purchase Request to Purchase Order Process</div><div class="desc">A specific strength &mdash; served as SAP Requisition-to-Payment (RtP) Process Expert at Shell, owning process governance from requisition through purchase order issuance and site-level execution.</div></div>
+<div class="crit-row"><div class="name">Program Management for Matrix Teams</div><div class="desc">Direct, current overlap &mdash; serve as the governance bridge between Germany Global Procurement and U.S. business units at Zeiss, and led cross-functional teams across R&amp;D, Regulatory, and Product Development at Rodan &amp; Fields.</div></div>
+<div class="crit-row"><div class="name">Scalable Programmatic Solutions</div><div class="desc">A specific strength &mdash; architected a Microsoft Power Platform solution that converted a 100-page manual governance process into an automated, standardized global workflow, still in use organization-wide.</div></div>
+<div class="crit-row"><div class="name">Contract Management for Centrally Governed Services</div><div class="desc">Direct overlap &mdash; lead joint Legal-Procurement review and negotiation of SOWs, MSAs, and NDAs at Zeiss; negotiated and authored contract terms at the site level across a $450M portfolio at Shell.</div></div>
+<div class="crit-row"><div class="name">Third-Party &amp; Contingent Labor Services Oversight</div><div class="desc">Direct overlap &mdash; negotiate service contracts and contingent-labor agreements, including H1B staffing, at Zeiss, maintaining compliance and continuity of third-party services.</div></div>
+<div class="crit-row"><div class="name">Standards Writing, Implementation &amp; Adherence</div><div class="desc">Direct overlap &mdash; drove full adoption of the Jaggaer cloud procurement platform at Zeiss and built enterprise risk mitigation frameworks at Rodan &amp; Fields, standardizing process across teams that had to actually use them.</div></div>
+<div class="crit-row"><div class="name">Data Center &amp; Facilities-Trades Services (Mechanical, Electrical, Maintenance)</div><div class="desc">Honest gap, stated plainly rather than bridged &mdash; no direct experience sourcing facilities-trades or data-center maintenance labor specifically; bridged by the same third-party services and contract governance discipline proven across four industries so far.</div></div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="section-label">
+<div class="eyebrow">Program Fluency</div>
+<h2>How the Governance Muscle Maps</h2>
+<p>The environment changes &mdash; from regulated manufacturing to a centrally governed global fleet &mdash; but the underlying discipline is the same one I've built and rebuilt across four industries.</p>
+</div>
+<table class="cf-table">
+<tr><th>What the Program Needs</th><th>What I've Built</th><th>Where</th></tr>
+<tr><td class="dim">Fleetwide Program Governance</td><td class="scope">Standardized processes running consistently across many sites and business units, not just one location.</td><td class="fit">Governance bridge between Germany Global Procurement and U.S. business units, Carl Zeiss Meditec; Regional Focal Point for global ERP systems, Shell.</td></tr>
+<tr><td class="dim">PR-to-PO / Requisition-to-Payment Ownership</td><td class="scope">End-to-end ownership of the procure-to-pay process for centrally governed spend.</td><td class="fit">SAP Requisition-to-Payment (RtP) Process Expert, Shell.</td></tr>
+<tr><td class="dim">Contract &amp; Compliance Controls</td><td class="scope">MSA/SOW management and contract compliance consistent with public-company financial controls.</td><td class="fit">Joint Legal-Procurement SOW/MSA review and negotiation, Carl Zeiss Meditec; contract compliance with local, state, and federal requirements, Shell.</td></tr>
+<tr><td class="dim">Business Review &amp; Audit Cadence</td><td class="scope">Recurring supplier performance and compliance reviews run at scale, not ad hoc.</td><td class="fit">Business Performance Reviews (BPRs) and KPI tracking, Shell; lead audit expert, Carl Zeiss Meditec.</td></tr>
+<tr><td class="dim">Process Standardization Across a Matrixed Org</td><td class="scope">Standards multiple teams adopt and actually use, not just document.</td><td class="fit">Power Platform automation converting a 100-page manual process into a global workflow, Carl Zeiss Meditec.</td></tr>
+</table>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="section-label">
+<div class="eyebrow">Track Record</div>
+<h2>Built From Scratch, Built to Last</h2>
+</div>
+<div class="seg-grid">
+<div class="seg-card"><h3>PR-to-PO Process Ownership</h3><p>Served as SAP Requisition-to-Payment (RtP) Process Expert at Shell, owning the process from requisition through purchase order issuance and site-level execution.</p></div>
+<div class="seg-card"><h3>Process Automation at Scale</h3><p>Architected a Microsoft Power App that converted a 100-page manual governance process into a single automated global workflow &mdash; unprompted, self-initiated, still standard practice today.</p></div>
+<div class="seg-card"><h3>Full Portfolio Governance, $450M</h3><p>Owned RFI through RFP, RFQ, and direct negotiation across chemical, lubricant, logistics, energy, and HSSE categories at Shell &mdash; delivering $20M in annual savings.</p></div>
+<div class="seg-card"><h3>Systems Fluency</h3><p>SAP S/4HANA &amp; ECC, Master Data Governance, Fiori, Jaggaer, Scout RFP &mdash; used operationally to run programs, not just to report on them.</p></div>
+</div>
+</div>
+</section>
+
+<section class="hero">
+<div class="wrap">
+<div class="section-label on-navy">
+<div class="eyebrow">A Real Example</div>
+<h2>What Indecision Actually Costs</h2>
+<p>An end-of-life component needed a $100K bridge buy to carry production through a redesign. Approval stalled &mdash; not for technical or budget reasons, but because no one wanted to own the decision. The need never went away, so the outcome was forced anyway: a broker-market buy at $500K.</p>
+</div>
+<div class="impact-grid">
+<div class="impact-card"><div class="num">$100K</div><div class="label">The fix that was available, and needed, from the start</div></div>
+<div class="impact-card"><div class="num">$500K</div><div class="label">What it actually cost once forced by delay</div></div>
+<div class="impact-card"><div class="num">$400K</div><div class="label">Paid entirely for indecision, not for the component itself</div></div>
+</div>
+<div class="quote-block">
+<p>The need was never in question. The only thing that changed while we waited was the price. That's the gap I try to close &mdash; not by moving faster than is responsible, but by making sure a correct call doesn't sit unmade.</p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="section-label">
+<div class="eyebrow">Pattern, Not Promise</div>
+<h2>Five Industries, Same Instinct</h2>
+<p>Adapting into a new operating environment isn't a hope for the next role &mdash; it's what has happened at every step of this one so far.</p>
+</div>
+<div class="timeline">
+<div class="tl-col"><div class="yr">2007&ndash;2013</div><div class="co">Sutter Health</div><div class="ind">Healthcare &middot; Tactical Purchasing</div></div>
+<div class="tl-col"><div class="yr">2013&ndash;2018</div><div class="co">Shell</div><div class="ind">Energy &middot; Contract Management</div></div>
+<div class="tl-col"><div class="yr">2018&ndash;2021</div><div class="co">Rodan &amp; Fields</div><div class="ind">Skincare &middot; Raw Materials</div></div>
+<div class="tl-col"><div class="yr">2022&ndash;Present</div><div class="co">Carl Zeiss Meditec</div><div class="ind">MedTech &middot; PCBA &amp; Optical</div></div>
+<div class="tl-col next"><div class="yr">Next</div><div class="co">Meta</div><div class="ind">Data Center Infrastructure &middot; Supplier Strategy</div></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="section-label">
+<div class="eyebrow">Corporate Context</div>
+<h2>Comparative Scale, Company by Company</h2>
+<p>A closer look at the operating scale behind each stop on that timeline &mdash; the same comparative lens I'd bring to sizing up a fleetwide program at Meta.</p>
+</div>
+<div class="tabs-nav">
+<button class="tab-btn" data-tab="sutter" type="button">Sutter Health &middot; Alta Bates Summit</button>
+<button class="tab-btn" data-tab="shell" type="button">Shell &middot; Martinez Refinery</button>
+<button class="tab-btn" data-tab="rf" type="button">Rodan + Fields</button>
+<button class="tab-btn" data-tab="zeiss" type="button">Carl Zeiss Meditec</button>
+<button class="tab-btn active" data-tab="meta" type="button">Meta</button>
+</div>
+<div class="tab-panel" id="tab-sutter">
+<table class="detail-table">
+<tr><td class="label">Industry</td><td class="val">Non-profit, multi-campus acute care hospital system &mdash; part of the Sutter Health integrated healthcare network.</td></tr>
+<tr><td class="label">Scale</td><td class="val">Alta Bates Summit Medical Center spans three campuses (Alta Bates &amp; Herrick in Berkeley, Summit in Oakland) with 1,000+ licensed beds; parent Sutter Health is a ~$16B+ annual revenue not-for-profit system.</td></tr>
+<tr><td class="label">Headcount</td><td class="val">~4,000 employees and 1,000+ active physicians at Alta Bates Summit Medical Center; Sutter Health system-wide employs roughly 57,000&ndash;64,000 people.</td></tr>
+</table>
+</div>
+<div class="tab-panel" id="tab-shell">
+<table class="detail-table">
+<tr><td class="label">Industry</td><td class="val">Petroleum refining, downstream fuel &amp; chemical processing, and marine terminal operations.</td></tr>
+<tr><td class="label">Scale</td><td class="val">Site: ~165,000 bpd refining capacity (2016) turning crude into gasoline, diesel, jet fuel, and asphalt.<br>US entity: Shell USA reported approximately $37B in annual revenue.<br>Global parent: Royal Dutch Shell plc posted $233.6B in revenue for full-year 2016.</td></tr>
+<tr><td class="label">Headcount</td><td class="val">Site: ~700 direct Shell FTEs (2016) plus 1,000+ local union contractors.<br>Global parent: Shell plc employed approximately 85,000 people worldwide as of end of 2025.</td></tr>
+</table>
+</div>
+<div class="tab-panel" id="tab-rf">
+<table class="detail-table">
+<tr><td class="label">Industry</td><td class="val">Cosmetics, premium skincare, and multi-level marketing / direct selling.</td></tr>
+<tr><td class="label">Scale</td><td class="val">~$1.6B&ndash;$1.7B annual net revenue at 2018 peak, reaching a $4B enterprise valuation following TPG Capital's investment.</td></tr>
+<tr><td class="label">Headcount</td><td class="val">~700&ndash;1,000 corporate FTEs (2018) plus roughly 411,000 active independent consultants.</td></tr>
+</table>
+</div>
+<div class="tab-panel" id="tab-zeiss">
+<table class="detail-table">
+<tr><td class="label">Industry</td><td class="val">Medical devices &mdash; ophthalmic and neurosurgical equipment.</td></tr>
+<tr><td class="label">Scale</td><td class="val">Meditec subsidiary: ~&euro;2.23B (~$2.4B USD) annual revenue.<br>Global parent: the ZEISS Group posted almost &euro;12B in FY2024/25, across four segments active in ~50 countries.</td></tr>
+<tr><td class="label">Headcount</td><td class="val">Meditec subsidiary: ~5,780 direct FTEs.<br>Global parent: the ZEISS Group employs over 46,600 people worldwide.</td></tr>
+</table>
+</div>
+<div class="tab-panel active" id="tab-meta">
+<table class="detail-table">
+<tr><td class="label">Industry</td><td class="val">Global technology and social media platforms; owns and operates the global data-center infrastructure that runs its services.</td></tr>
+<tr><td class="label">Scale</td><td class="val">Q2 2026 revenue of $60.8B, up 28% year-over-year; full-year 2026 capital-expenditure guidance of $130&ndash;145B, driven by servers, data centers, and network infrastructure investment.</td></tr>
+<tr><td class="label">Headcount</td><td class="val">75,000+ employees company-wide as of Q2 2026.</td></tr>
+</table>
+</div>
+<table class="cf-table" style="margin-top:32px;table-layout:fixed;">
+<colgroup>
+<col style="width:17%;">
+<col style="width:19%;">
+<col style="width:26%;">
+<col style="width:14%;">
+<col style="width:24%;">
+</colgroup>
+<tr><th>Company</th><th>Core Industry</th><th>Scale / Revenue</th><th>Headcount</th><th>Program / Governance Scope</th></tr>
+<tr><td class="dim">Sutter Health &middot; Alta Bates Summit</td><td class="scope">Acute Care Healthcare</td><td class="scope">1,000+ beds &middot; ~$16B+ system revenue</td><td class="scope">~4,000 (+64k system-wide)</td><td class="scope">Multi-site healthcare procurement &amp; regulatory compliance</td></tr>
+<tr><td class="dim">Shell &middot; Martinez Refinery</td><td class="scope">Refining &amp; Downstream</td><td class="scope">165k bpd site &middot; $37B US &middot; $233.6B global</td><td class="scope">~700 site (+1,000 contractors) &middot; ~85k global</td><td class="scope">$450M contract portfolio; global ERP / PR-to-PO governance</td></tr>
+<tr><td class="dim">Rodan + Fields</td><td class="scope">Cosmetics &amp; Skincare</td><td class="scope">~$1.7B revenue (peak)</td><td class="scope">~700&ndash;1,000 corporate (+411k reps)</td><td class="scope">Multi-year category roadmaps; cross-functional NPI governance</td></tr>
+<tr><td class="dim">Carl Zeiss Meditec</td><td class="scope">Medical Devices &amp; Tech</td><td class="scope">&euro;2.23B Meditec &middot; ~&euro;12B ZEISS Group global</td><td class="scope">~5,780 Meditec (+46,600 global)</td><td class="scope">Global-to-regional governance bridge; process automation at scale</td></tr>
+<tr><td class="dim">Meta</td><td class="scope">Technology &amp; Data Center Infrastructure</td><td class="scope">$60.8B Q2 2026 revenue &middot; $130&ndash;145B 2026 capex guidance</td><td class="scope">75,000+ global</td><td class="scope">Fleetwide, centrally governed supplier program across a global data-center footprint</td></tr>
+</table>
+<div class="compare-note">Meta figures reflect Q2 2026 earnings disclosures and full-year 2026 guidance; other companies reflect prior tenure-era or current public figures as noted.</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="section-label">
+<div class="eyebrow">How I'd Start</div>
+<h2>The First 90 Days</h2>
+<p>Before I build anything, I want to understand what's actually true here first &mdash; the same instinct behind every framework above: learn the real process before changing it.</p>
+</div>
+<div class="seg-grid" style="grid-template-columns:repeat(3,1fr);">
+<div class="seg-card"><h3>Days 1&ndash;30 &middot; Learn the Real Program</h3><p>Map what's actually running today across supplier lifecycle, category management, and contract governance for fleetwide services &mdash; where standards exist, where they're inconsistent, and where PR-to-PO friction is costing time. Meet with Sourcing, Operations, Legal, and Enterprise Engineering to find what's urgent and where duplicative effort is hiding.</p></div>
+<div class="seg-card"><h3>Days 31&ndash;60 &middot; Close the Fastest Gaps</h3><p>Tighten the business review and audit cadence for supplier performance and compliance, and fix the one or two process breakpoints causing the most escalations at the site level. Look for a fast, visible win rather than months of framework-building before anything ships.</p></div>
+<div class="seg-card"><h3>Days 61&ndash;90 &middot; Make It Repeatable</h3><p>Formalize what worked into a documented standard multiple teams can run without me in the room, with a clear implementation, compliance, and communication plan &mdash; the same instinct behind the Zeiss Power App and the Shell RtP governance model &mdash; so the program scales past the first fire it puts out.</p></div>
+</div>
+</div>
+</section>
+
+<section class="closing">
+<div class="wrap">
+<div class="eyebrow" style="color:var(--gold);">Closing Note</div>
+<h2>I'm a dog with a bone about the things I believe are worth proving.</h2>
+<p>When I can show a case is a definitive benefit, I chip away until it's actually adopted &mdash; not just proposed. That's the habit behind every framework and workflow above, and it's the habit I'd bring to running supplier strategy at Meta: understand the process, prove the case, see it through.</p>
+<div class="sign">Valerie Bagala &middot; Strategic Sourcing Partner</div>
+</div>
+</section>
+
+<footer>
+<div class="wrap">Prepared for Meta &middot; Figures and examples generalized for confidentiality where noted.</div>
+</footer>
+
+<script>
+document.querySelectorAll('.tab-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var tab = btn.getAttribute('data-tab');
+    document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+    document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById('tab-' + tab).classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
